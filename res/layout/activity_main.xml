@@ -30,32 +30,14 @@
         android:layout_width="match_parent"
         android:layout_height="0dp" 
         android:padding="20dp" >
-
-	    <Button
-	        android:id="@+id/generateButton"
-	        android:layout_width="100dp"
-	        android:layout_height="50dp"
-	        android:layout_alignParentRight="true"
-	        android:onClick="generateRegEx"
-	        android:text="@string/generateButton" />
-	    
-	    <EditText
-	        android:id="@+id/inputText"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentLeft="true"
-	        android:layout_alignBottom="@id/generateButton"
-	        android:layout_toLeftOf="@id/generateButton"
-	        android:hint="@string/inputText"
-	        android:inputType="text" />
 	    
 	    <TextView
 	        android:id="@+id/regexText"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_centerHorizontal="true"
-	        android:layout_alignParentBottom="true"
-	        android:layout_marginBottom="20dp"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginTop="40dp"
 	        android:text="@string/regexText"
 	        android:textSize="20sp" />
             

@@ -6,10 +6,15 @@
     <string name="title_section1">Starts with</string>
     <string name="title_section2">Contains</string>
     <string name="title_section3">Ends with</string>
-    <string name="inputText">Enter text</string>
-    <string name="regexText">regex will go here</string>
-    <string name="generateButton">generate</string>
-    <string name="test">test</string>
-	<string name="page_one">This is the first page</string>
     
+    <string name="startsWithText">exact text&#8230;</string>
+    <string name="startsWithButton">done</string>
+	<string name="anything">anything</string>
+	<string name="upper_letter">uppercase letter</string>
+	<string name="lower_letter">lowercase letter</string>
+	<string name="number">number</string>
+	<string name="symbol">symbol</string>
+	
+    <string name="regexText">regex will go here</string>
+	
 </resources>

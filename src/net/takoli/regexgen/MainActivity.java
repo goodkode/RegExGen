@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ public class MainActivity extends FragmentActivity {
 
 	SectionsPagerAdapter mSectionsPagerAdapter;
 	ViewPager mViewPager;  //will host the section contents
+	TextView regExText;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +42,76 @@ public class MainActivity extends FragmentActivity {
 	}
 	
 	// this creates the REGEX - just test now
-	public void generateRegEx(View view) {
+	public void onStartsWithButton(View view) {
 		// Do something in response to button
-		EditText inputText = (EditText) findViewById(R.id.inputText);
-		String input = inputText.getText().toString();
-		TextView regExText = (TextView) findViewById(R.id.regexText);
-		regExText.setText(input);
+		EditText startsWithText = (EditText) findViewById(R.id.startsWithText);
+		String startsWith = startsWithText.getText().toString();
+		regExText = (TextView) findViewById(R.id.regexText);
+		regExText.setText(startsWith);
+	}
+	
+	public void onSWFCheckboxClicked(View view) {
+	    // Is the view now checked?
+	    boolean checked = ((CheckBox) view).isChecked();
+	    
+	    switch(view.getId()) {
+	        case R.id.anything:
+	            if (checked) {
+	            	Log.i("SWFCheckBox", "anything");
+	            	((CheckBox) findViewById(R.id.upper_letter)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.lower_letter)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.number)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.symbol)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.startsWithCheckBox)).setChecked(false);
+		            regExText = (TextView) findViewById(R.id.regexText);
+		    		regExText.setText("anything"); }
+	            break;
+	        case R.id.upper_letter:
+	            if (checked) {
+	            	Log.i("SWFCheckBox", "upper_letter");
+	            	((CheckBox) findViewById(R.id.anything)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.startsWithCheckBox)).setChecked(false);
+		            regExText = (TextView) findViewById(R.id.regexText);
+		    		regExText.setText("upper_letter"); }
+	            break;
+	        case R.id.lower_letter:
+	            if (checked) {
+	            	Log.i("SWFCheckBox", "lower_letter");
+	            	((CheckBox) findViewById(R.id.anything)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.startsWithCheckBox)).setChecked(false);
+		            regExText = (TextView) findViewById(R.id.regexText);
+		    		regExText.setText("lower_letter"); }
+	            break;
+	        case R.id.number:
+	            if (checked) {
+	            	Log.i("SWFCheckBox", "number");
+	            	((CheckBox) findViewById(R.id.anything)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.startsWithCheckBox)).setChecked(false);
+		            regExText = (TextView) findViewById(R.id.regexText);
+		    		regExText.setText("number"); }
+	            break;
+	        case R.id.symbol:
+	            if (checked) {
+	            	Log.i("SWFCheckBox", "symbol");
+	            	((CheckBox) findViewById(R.id.anything)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.startsWithCheckBox)).setChecked(false);
+		            regExText = (TextView) findViewById(R.id.regexText);
+		    		regExText.setText("symbol"); }
+	            break;
+	        case R.id.startsWithCheckBox:
+	            if (checked) {
+	            	Log.i("SWFCheckBox", "startsWithCheckBox");
+	            	((CheckBox) findViewById(R.id.anything)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.upper_letter)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.lower_letter)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.number)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.symbol)).setChecked(false);
+	            	EditText startsWithText = (EditText) findViewById(R.id.startsWithText);
+	        		String startsWith = startsWithText.getText().toString();
+		            regExText = (TextView) findViewById(R.id.regexText);
+		    		regExText.setText(startsWith); }
+	            break;
+	    }
 	}
 
 	//this returns a fragment corresponding to one of the sections/tabs/pages.
