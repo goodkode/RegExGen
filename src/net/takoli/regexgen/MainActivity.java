@@ -20,6 +20,7 @@ public class MainActivity extends FragmentActivity {
 	SectionsPagerAdapter mSectionsPagerAdapter;
 	ViewPager mViewPager;  //will host the section contents
 	TextView regExText;
+	String sw, cnt, ew;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,9 @@ public class MainActivity extends FragmentActivity {
 		// Set up the ViewPager with the sections adapter.
 		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
+		sw = ".*";
+		cnt = "";
+		ew = "";
 	}
 
 	@Override  // Menu settings - optional
@@ -41,21 +45,19 @@ public class MainActivity extends FragmentActivity {
 		return true;
 	}
 	
-	// this creates the REGEX - just test now
-	public void onStartsWithButton(View view) {
-		// Do something in response to button
-		EditText startsWithText = (EditText) findViewById(R.id.startsWithText);
-		String startsWith = startsWithText.getText().toString();
+	// this creates the REGEX
+	public void createRegex(View view) {
 		regExText = (TextView) findViewById(R.id.regexText);
-		regExText.setText(startsWith);
+		regExText.setText(sw+cnt+ew);
 	}
 	
+	// STARTS WITH FRAGMENT
 	public void onSWFCheckboxClicked(View view) {
 	    // Is the view now checked?
 	    boolean checked = ((CheckBox) view).isChecked();
 	    
 	    switch(view.getId()) {
-	        case R.id.anything:
+	        case R.id.startsAnything:
 	            if (checked) {
 	            	Log.i("SWFCheckBox", "anything");
 	            	((CheckBox) findViewById(R.id.upper_letter)).setChecked(false);
@@ -63,57 +65,158 @@ public class MainActivity extends FragmentActivity {
 	            	((CheckBox) findViewById(R.id.number)).setChecked(false);
 	            	((CheckBox) findViewById(R.id.symbol)).setChecked(false);
 	            	((CheckBox) findViewById(R.id.startsWithCheckBox)).setChecked(false);
-		            regExText = (TextView) findViewById(R.id.regexText);
-		    		regExText.setText("anything"); }
+		            sw = "sany";
+		            createRegex(view); }
 	            break;
 	        case R.id.upper_letter:
 	            if (checked) {
 	            	Log.i("SWFCheckBox", "upper_letter");
-	            	((CheckBox) findViewById(R.id.anything)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.startsAnything)).setChecked(false);
 	            	((CheckBox) findViewById(R.id.startsWithCheckBox)).setChecked(false);
-		            regExText = (TextView) findViewById(R.id.regexText);
-		    		regExText.setText("upper_letter"); }
+	            	sw = "ulet";
+		            createRegex(view); }
 	            break;
 	        case R.id.lower_letter:
 	            if (checked) {
 	            	Log.i("SWFCheckBox", "lower_letter");
-	            	((CheckBox) findViewById(R.id.anything)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.startsAnything)).setChecked(false);
 	            	((CheckBox) findViewById(R.id.startsWithCheckBox)).setChecked(false);
-		            regExText = (TextView) findViewById(R.id.regexText);
-		    		regExText.setText("lower_letter"); }
+	            	sw = "llet";
+		            createRegex(view); }
 	            break;
 	        case R.id.number:
 	            if (checked) {
 	            	Log.i("SWFCheckBox", "number");
-	            	((CheckBox) findViewById(R.id.anything)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.startsAnything)).setChecked(false);
 	            	((CheckBox) findViewById(R.id.startsWithCheckBox)).setChecked(false);
-		            regExText = (TextView) findViewById(R.id.regexText);
-		    		regExText.setText("number"); }
+	            	sw = "num";
+		            createRegex(view); }
 	            break;
 	        case R.id.symbol:
 	            if (checked) {
 	            	Log.i("SWFCheckBox", "symbol");
-	            	((CheckBox) findViewById(R.id.anything)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.startsAnything)).setChecked(false);
 	            	((CheckBox) findViewById(R.id.startsWithCheckBox)).setChecked(false);
-		            regExText = (TextView) findViewById(R.id.regexText);
-		    		regExText.setText("symbol"); }
+	            	sw = "sym";
+		            createRegex(view); }
 	            break;
 	        case R.id.startsWithCheckBox:
 	            if (checked) {
 	            	Log.i("SWFCheckBox", "startsWithCheckBox");
-	            	((CheckBox) findViewById(R.id.anything)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.startsAnything)).setChecked(false);
 	            	((CheckBox) findViewById(R.id.upper_letter)).setChecked(false);
 	            	((CheckBox) findViewById(R.id.lower_letter)).setChecked(false);
 	            	((CheckBox) findViewById(R.id.number)).setChecked(false);
 	            	((CheckBox) findViewById(R.id.symbol)).setChecked(false);
 	            	EditText startsWithText = (EditText) findViewById(R.id.startsWithText);
-	        		String startsWith = startsWithText.getText().toString();
-		            regExText = (TextView) findViewById(R.id.regexText);
-		    		regExText.setText(startsWith); }
+	        		sw = startsWithText.getText().toString();
+		            createRegex(view); }
 	            break;
 	    }
 	}
 
+	// CONTINUES WITH FRAGMENT
+	public void onCFCheckboxClicked(View view) {
+	    // Is the view now checked?
+	    boolean checked = ((CheckBox) view).isChecked();
+	    
+	    switch(view.getId()) {
+	        case R.id.contAnything:
+	            if (checked) {
+	            	Log.i("CFCheckBox", "contAnything");
+	            	((CheckBox) findViewById(R.id.containsText1CheckBox)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.containsText2CheckBox)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.containsText3CheckBox)).setChecked(false);
+	            	((CheckBox) findViewById(R.id.notContainsTextCheckBox)).setChecked(false);
+	            	cnt = "cany";
+		            createRegex(view); }
+	            break;
+	        case R.id.containsText1CheckBox:
+	            if (checked) {
+	            	Log.i("CFCheckBox", "containsText1CheckBox");
+	            	((CheckBox) findViewById(R.id.contAnything)).setChecked(false);
+	            	EditText contText = (EditText) findViewById(R.id.containsText1);
+	            	cnt = contText.getText().toString();
+		            createRegex(view); }
+	            break;
+	        case R.id.containsText2CheckBox:
+	            if (checked) {
+	            	Log.i("CFCheckBox", "containsText2CheckBox");
+	            	((CheckBox) findViewById(R.id.contAnything)).setChecked(false);
+	            	EditText contText = (EditText) findViewById(R.id.containsText2);
+	            	cnt = contText.getText().toString();
+		            createRegex(view); }
+	            break;
+	        case R.id.containsText3CheckBox:
+	            if (checked) {
+	            	Log.i("CFCheckBox", "containsText3CheckBox");
+	            	((CheckBox) findViewById(R.id.contAnything)).setChecked(false);
+	            	EditText contText = (EditText) findViewById(R.id.containsText3);
+	            	cnt = contText.getText().toString();
+		            createRegex(view); }
+	            break;
+	        case R.id.notContainsTextCheckBox:
+	            if (checked) {
+	            	Log.i("CFCheckBox", "notContainsTextCheckBox");
+	            	((CheckBox) findViewById(R.id.contAnything)).setChecked(false);
+	            	EditText contText = (EditText) findViewById(R.id.notContainsText);
+	            	cnt = contText.getText().toString();
+		            createRegex(view); }
+	            break;
+	    }
+	}
+	
+	// ENDS WITH FRAGMENT
+	public void onEWFCheckboxClicked(View view) {
+	    // Is the view now checked?
+	    boolean checked = ((CheckBox) view).isChecked();
+	    
+	    switch(view.getId()) {
+        case R.id.endsAnything:
+            if (checked) {
+            	Log.i("EWFCheckbox", "endsAnything");
+            	((CheckBox) findViewById(R.id.endsText1CheckBox)).setChecked(false);
+            	((CheckBox) findViewById(R.id.endsText2CheckBox)).setChecked(false);
+            	((CheckBox) findViewById(R.id.endsText3CheckBox)).setChecked(false);
+            	((CheckBox) findViewById(R.id.notEndsTextCheckBox)).setChecked(false);
+            	ew = "eany";
+	            createRegex(view); }
+            break;
+        case R.id.endsText1CheckBox:
+            if (checked) {
+            	Log.i("EWFCheckbox", "endsText1CheckBox");
+            	((CheckBox) findViewById(R.id.endsAnything)).setChecked(false);
+            	EditText endText = (EditText) findViewById(R.id.endsText1);
+            	ew = endText.getText().toString();
+	            createRegex(view); }
+            break;
+        case R.id.endsText2CheckBox:
+            if (checked) {
+            	Log.i("EWFCheckbox", "endsText2CheckBox");
+            	((CheckBox) findViewById(R.id.endsAnything)).setChecked(false);
+            	EditText endText = (EditText) findViewById(R.id.endsText2);
+            	ew = endText.getText().toString();
+	            createRegex(view); }
+            break;
+        case R.id.endsText3CheckBox:
+            if (checked) {
+            	Log.i("EWFCheckbox", "endsText3CheckBox");
+            	((CheckBox) findViewById(R.id.endsAnything)).setChecked(false);
+            	EditText endText = (EditText) findViewById(R.id.endsText3);
+            	ew = endText.getText().toString();
+	            createRegex(view); }
+            break;
+        case R.id.notEndsTextCheckBox:
+            if (checked) {
+            	Log.i("EWFCheckbox", "notEndsTextCheckBox");
+            	((CheckBox) findViewById(R.id.endsAnything)).setChecked(false);
+            	EditText endText = (EditText) findViewById(R.id.notEndsWithText);
+            	ew = endText.getText().toString();
+	            createRegex(view); }
+            break;
+	    }
+	}
+	
 	//this returns a fragment corresponding to one of the sections/tabs/pages.
 	public class SectionsPagerAdapter extends FragmentPagerAdapter {
 

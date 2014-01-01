@@ -1,17 +1,122 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:baselineAligned="false"
     android:background="#ffc500"
     tools:context=".MainActivity$DummySectionFragment" >
 
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-</RelativeLayout>
+    <RelativeLayout
+	    android:layout_weight="1"
+	    android:layout_width="0dp"
+	    android:layout_height="match_parent">
+	    
+	    <!-- TEXT on the side-->    
+		<TextView
+		    android:id="@+id/sideText3"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_centerInParent="true"
+		    android:singleLine="true"
+		    android:rotation="-90"
+		    android:text="@string/title_section3"
+		    android:textSize="25sp"
+		    android:textStyle="italic" />
+		
+    </RelativeLayout>
+    
+    <RelativeLayout
+	    android:layout_weight="2"
+	    android:layout_width="0dp"
+	    android:layout_height="match_parent" 
+	    android:layout_marginTop="20dp" >
+		
+        <CheckBox
+	        android:id="@+id/endsAnything"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/anything"
+	        android:checked="true"
+	        android:onClick="onEWFCheckboxClicked" />
+        
+        <CheckBox
+	        android:id="@+id/endsText1CheckBox"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:layout_below="@id/endsAnything"
+	        android:text="@string/empty"
+	        android:onClick="onEWFCheckboxClicked" />
+		
+	        <EditText
+		        android:id="@+id/endsText1"
+		        android:layout_width="150dp"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@id/endsText1CheckBox"
+		        android:layout_alignBaseline="@id/endsText1CheckBox"
+		        android:paddingBottom="5dp"
+		        android:hint="@string/endsText"
+		        android:textSize="16sp"
+		        android:inputType="text" />
+        
+	    <CheckBox
+	        android:id="@+id/endsText2CheckBox"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:layout_below="@id/endsText1CheckBox"
+	        android:text="@string/OR"
+	        android:onClick="onEWFCheckboxClicked" />
+        
+	        <EditText
+		        android:id="@+id/endsText2"
+		        android:layout_width="130dp"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@id/endsText2CheckBox"
+		        android:layout_alignBaseline="@id/endsText2CheckBox"
+		        android:paddingBottom="5dp"
+		        android:hint="@string/endsText"
+		        android:textSize="16sp"
+		        android:inputType="text" />
+	        
+	    <CheckBox
+	        android:id="@+id/endsText3CheckBox"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:layout_below="@id/endsText2CheckBox"
+	        android:text="@string/OR"
+	        android:onClick="onEWFCheckboxClicked" />
+        
+	        <EditText
+		        android:id="@+id/endsText3"
+		        android:layout_width="130dp"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@id/endsText3CheckBox"
+		        android:layout_alignBaseline="@id/endsText3CheckBox"
+		        android:paddingBottom="5dp"
+		        android:hint="@string/endsText"
+		        android:textSize="16sp"
+		        android:inputType="text" />
+	    
+	    <!-- doesnt end with -->
+	    <CheckBox
+	        android:id="@+id/notEndsTextCheckBox"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:layout_below="@id/endsText3CheckBox"
+			android:layout_marginTop="18dp"
+	        android:text="@string/but"
+	        android:onClick="onEWFCheckboxClicked" />
+        
+	        <EditText
+		        android:id="@+id/notEndsWithText"
+		        android:layout_width="120dp"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@id/notEndsTextCheckBox"
+		        android:layout_alignBaseline="@id/notEndsTextCheckBox"
+		        android:paddingBottom="5dp"
+		        android:hint="@string/notEndsWithText"
+		        android:textSize="16sp"
+		        android:inputType="text" />
+        
+    </RelativeLayout>
+	
+</LinearLayout>

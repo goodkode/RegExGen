@@ -14,7 +14,18 @@
 	<string name="lower_letter">lowercase letter</string>
 	<string name="number">number</string>
 	<string name="symbol">symbol</string>
-	
+    
+    <string name="containsText">contains&#8230;</string>
+    <string name="notContainsText">doesn\'t contain&#8230;</string>
+    <string name="OR">or:</string>
+    <string name="but">but:</string>
+
+    <string name="endsText">ends with&#8230;</string>
+    <string name="notEndsWithText">doesn\'t end with&#8230;</string>
+
+    <string name="empty"></string>
+    <string name="swipe">swipe for next</string>
+    		
     <string name="regexText">regex will go here</string>
 	
 </resources>
