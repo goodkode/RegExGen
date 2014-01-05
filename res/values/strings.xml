@@ -26,6 +26,6 @@
     <string name="empty"></string>
     <string name="swipe">swipe for next</string>
     		
-    <string name="regexText">regex will go here</string>
+    <string name="regexText">.*</string>
 	
 </resources>

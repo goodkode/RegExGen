@@ -21,7 +21,8 @@
 		    android:rotation="-90"
 		    android:text="@string/title_section2"
 		    android:textSize="25sp"
-		    android:textStyle="italic" />
+		    android:textStyle="italic"
+		    android:textColor="#33b5e5" />
 		
     </RelativeLayout>
     
@@ -56,7 +57,7 @@
 		        android:paddingBottom="5dp"
 		        android:hint="@string/containsText"
 		        android:textSize="16sp"
-		        android:inputType="text" />
+		        android:inputType="textNoSuggestions" />
         
 	    <CheckBox
 	        android:id="@+id/containsText2CheckBox"
@@ -75,7 +76,7 @@
 		        android:paddingBottom="5dp"
 		        android:hint="@string/containsText"
 		        android:textSize="16sp"
-		        android:inputType="text" />
+		        android:inputType="textNoSuggestions" />
 	        
 	    <CheckBox
 	        android:id="@+id/containsText3CheckBox"
@@ -94,7 +95,7 @@
 		        android:paddingBottom="5dp"
 		        android:hint="@string/containsText"
 		        android:textSize="16sp"
-		        android:inputType="text" />
+		        android:inputType="textNoSuggestions" />
 	        
 	    <!-- doesnt contain -->
 	    <CheckBox
@@ -115,7 +116,7 @@
 		        android:paddingBottom="5dp"
 		        android:hint="@string/notContainsText"
 		        android:textSize="16sp"
-		        android:inputType="text" />
+		        android:inputType="textNoSuggestions" />
         
 		<!-- swipe -->    
 		<TextView

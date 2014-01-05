@@ -20,7 +20,8 @@
 	        android:rotation="-90"
 	        android:text="@string/title_section1"
 	        android:textSize="25sp"
-	        android:textStyle="italic" />
+	        android:textStyle="italic"
+	        android:textColor="#33b5e5" />
     
     </RelativeLayout>
     
@@ -91,7 +92,7 @@
 		        android:paddingBottom="5dp"
 		        android:hint="@string/startsWithText"
 		        android:textSize="16sp"
-		        android:inputType="text" />
+		        android:inputType="textNoSuggestions" />
 		    
 		<!-- swipe -->    
 		<TextView
