@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp" 
         android:padding="15dp"
-        android:background="#7033b5e5" >
+        android:background="#9833b5e5" >
 	    
         <TextView
 	        android:id="@+id/regexLabel"
@@ -50,10 +50,20 @@
 	        android:layout_height="wrap_content"
 	        android:layout_centerHorizontal="true"
 	        android:layout_below="@id/regexLabel"
-	        android:padding="3dp"
+	        android:padding="6dp"
 	        android:text="@string/regexText"
 	        android:textStyle="bold"
 	        android:textSize="20sp" />
+	    
+	    <Button
+	        android:id="@+id/shareButton"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/regexText"
+	        android:layout_centerHorizontal="true"
+	        android:text="@string/shareButton"
+	        android:textSize="15sp"
+	        android:onClick="onShareClick" />
 
 	    <Button
 	        android:id="@+id/cheatSheet"
@@ -61,7 +71,8 @@
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentBottom="true"
 	        android:layout_centerHorizontal="true"
-	        android:text="@string/regex_cheat_sheet" />
+	        android:text="@string/regex_cheat_sheet" 
+	        android:onClick="showCheatSheet" />
             
     </RelativeLayout>
 </LinearLayout>

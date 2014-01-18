@@ -1,5 +1,7 @@
 package net.takoli.regexgen;
 
+import android.app.DialogFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -11,6 +13,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -48,10 +51,16 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	// Menu about
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
+		return true; }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+		Log.i("about", "pressed");
+		DialogFragment about = new AboutDialogFragment();
+		about.show(getFragmentManager(), "test");
 		return true;
-	}
+    }
 
 	// this creates the REGEX
 	public void createRegex() {
@@ -77,6 +86,15 @@ public class MainActivity extends FragmentActivity {
 	private String withEscapes(String orig) {
 		String escaped = orig;
 		return escaped;
+	}
+	
+	public void onShareClick(View view) {
+		Intent sendIntent = new Intent();
+		sendIntent.setAction(Intent.ACTION_SEND);
+		sendIntent.putExtra(Intent.EXTRA_TEXT, regExText.getText());
+		sendIntent.putExtra(Intent.EXTRA_SUBJECT, "Created with RegExGen app");
+		sendIntent.setType("text/plain");
+		startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.share_regex_to)));
 	}
 
 	// STARTS WITH FRAGMENT
@@ -664,6 +682,12 @@ public class MainActivity extends FragmentActivity {
 						createRegex();
 					}
 				});
+	}
+	
+	public void showCheatSheet(View view) {
+		Log.i("Cheat Sheet", "time to show it");
+		Intent intent = new Intent(this, DisplayCheatSheetActivity.class);
+		startActivity(intent);
 	}
 
 	public class SectionsPagerAdapter extends FragmentPagerAdapter {
