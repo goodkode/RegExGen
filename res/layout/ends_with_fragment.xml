@@ -11,6 +11,11 @@
 	    android:layout_width="0dp"
 	    android:layout_height="match_parent">
 	    
+        <CheckBox
+        android:id="@+id/section_label"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+	    
 	    <!-- TEXT on the side-->    
 		<TextView
 		    android:id="@+id/sideText3"
@@ -22,7 +27,8 @@
 		    android:text="@string/title_section3"
 		    android:textSize="25sp"
 		    android:textStyle="italic"
-		    android:textColor="#33b5e5" />
+		    android:textColor="#33b5e5"
+		    android:onClick="regEWFlisteners" />
 		
     </RelativeLayout>
     
@@ -30,7 +36,7 @@
 	    android:layout_weight="2"
 	    android:layout_width="0dp"
 	    android:layout_height="match_parent" 
-	    android:layout_marginTop="20dp" >
+	    android:layout_marginTop="20dp"  >
 		
         <CheckBox
 	        android:id="@+id/endsAnything"
@@ -57,7 +63,8 @@
 		        android:paddingBottom="5dp"
 		        android:hint="@string/endsText"
 		        android:textSize="16sp"
-		        android:inputType="textNoSuggestions" />
+		        android:inputType="textNoSuggestions" 
+		        android:onClick="regEWFlisteners" />
         
 	    <CheckBox
 	        android:id="@+id/endsText2CheckBox"
@@ -76,7 +83,8 @@
 		        android:paddingBottom="5dp"
 		        android:hint="@string/endsText"
 		        android:textSize="16sp"
-		        android:inputType="textNoSuggestions" />
+		        android:inputType="textNoSuggestions"
+		        android:onClick="regEWFlisteners" />
 	        
 	    <CheckBox
 	        android:id="@+id/endsText3CheckBox"
@@ -95,7 +103,8 @@
 		        android:paddingBottom="5dp"
 		        android:hint="@string/endsText"
 		        android:textSize="16sp"
-		        android:inputType="textNoSuggestions" />
+		        android:inputType="textNoSuggestions"
+		        android:onClick="regEWFlisteners" />
 	    
 	    <!-- doesnt end with -->
 	    <CheckBox
@@ -108,7 +117,7 @@
 	        android:onClick="onEWFCheckboxClicked" />
         
 	        <EditText
-		        android:id="@+id/notEndsWithText"
+		        android:id="@+id/notEndsText"
 		        android:layout_width="120dp"
 		        android:layout_height="wrap_content"
 		        android:layout_toRightOf="@id/notEndsTextCheckBox"
@@ -116,7 +125,8 @@
 		        android:paddingBottom="5dp"
 		        android:hint="@string/notEndsWithText"
 		        android:textSize="16sp"
-		        android:inputType="textNoSuggestions" />
+		        android:inputType="textNoSuggestions"
+		        android:onClick="regEWFlisteners" />
         
     </RelativeLayout>
 	

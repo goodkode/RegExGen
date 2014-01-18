@@ -8,7 +8,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/pager"
-        android:layout_weight="2"
+        android:layout_weight="4"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         app:context=".MainActivity" >
@@ -19,26 +19,49 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:background="#33b5e5"
-            android:paddingBottom="4dp"
-            android:paddingTop="4dp"
-            android:textColor="#fff" >
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:textColor="#fff"
+            android:textStyle="italic" >
         </android.support.v4.view.PagerTitleStrip>
+        
     </android.support.v4.view.ViewPager>
 
     <RelativeLayout
-        android:layout_weight="2"
+        android:layout_weight="5"
         android:layout_width="match_parent"
         android:layout_height="0dp" 
+        android:padding="15dp"
         android:background="#7033b5e5" >
+	    
+        <TextView
+	        android:id="@+id/regexLabel"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_alignParentTop="true"
+	        android:text="@string/regexLabel"
+	        android:textColor="#FFFFFF"
+	        android:textSize="15sp" />
 	    
 	    <TextView
 	        android:id="@+id/regexText"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_centerHorizontal="true"
-	        android:layout_alignParentTop="true"
+	        android:layout_below="@id/regexLabel"
+	        android:padding="3dp"
 	        android:text="@string/regexText"
+	        android:textStyle="bold"
 	        android:textSize="20sp" />
+
+	    <Button
+	        android:id="@+id/cheatSheet"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:layout_centerHorizontal="true"
+	        android:text="@string/regex_cheat_sheet" />
             
     </RelativeLayout>
 </LinearLayout>

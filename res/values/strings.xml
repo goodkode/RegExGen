@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">RegEx Generator</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_about">Settings</string>
     <string name="title_section1">Starts with</string>
     <string name="title_section2">Contains</string>
     <string name="title_section3">Ends with</string>
@@ -26,6 +26,8 @@
     <string name="empty"></string>
     <string name="swipe">swipe for next</string>
     		
+    <string name="regexLabel">Regular Expression:</string>
     <string name="regexText">.*</string>
+    <string name="regex_cheat_sheet">Regex cheat sheet</string>
 	
 </resources>

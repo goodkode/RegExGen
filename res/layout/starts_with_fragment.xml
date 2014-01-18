@@ -9,7 +9,12 @@
 	<RelativeLayout
 	    android:layout_weight="1"
 	    android:layout_width="0dp"
-	    android:layout_height="match_parent">
+	    android:layout_height="match_parent" >
+	    
+	    <CheckBox
+        android:id="@+id/section_label"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
 	    
 	    <!-- TEXT on the side rotated -->
 		<TextView
@@ -21,7 +26,8 @@
 	        android:text="@string/title_section1"
 	        android:textSize="25sp"
 	        android:textStyle="italic"
-	        android:textColor="#33b5e5" />
+	        android:textColor="#33b5e5" 
+	        android:onClick="regSWFlisteners" />
     
     </RelativeLayout>
     
@@ -92,7 +98,8 @@
 		        android:paddingBottom="5dp"
 		        android:hint="@string/startsWithText"
 		        android:textSize="16sp"
-		        android:inputType="textNoSuggestions" />
+		        android:inputType="textNoSuggestions" 
+		        android:onClick="regSWFlisteners" />
 		    
 		<!-- swipe -->    
 		<TextView
@@ -101,7 +108,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentBottom="true"
 	        android:layout_alignParentLeft="true"
-	        android:padding="10dp"
+	        android:padding="8dp"
 	        android:text="@string/swipe"
 	        android:textSize="12sp"
 	        android:textStyle="italic"
