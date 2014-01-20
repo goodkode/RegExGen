@@ -21,7 +21,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends FragmentActivity {
+public class MainRegexGen extends FragmentActivity {
 
 	SectionsPagerAdapter mSectionsPagerAdapter;
 	ViewPager mViewPager; // will host the section contents
@@ -34,7 +34,7 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.main);
 
 		// Create the adapter that will return a fragment for the sections
 		mSectionsPagerAdapter = new SectionsPagerAdapter(
@@ -95,6 +95,13 @@ public class MainActivity extends FragmentActivity {
 		sendIntent.putExtra(Intent.EXTRA_SUBJECT, "Created with RegExGen app");
 		sendIntent.setType("text/plain");
 		startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.share_regex_to)));
+	}
+	
+	public void showCheatSheet(View view) {
+		Log.i("Cheat Sheet", "time to show it");
+		Intent intent = new Intent(this, DisplayCheatSheetActivity.class);
+		startActivity(intent);
+		overridePendingTransition(R.anim.cheat_enter, R.anim.main_exit);
 	}
 
 	// STARTS WITH FRAGMENT
@@ -682,12 +689,6 @@ public class MainActivity extends FragmentActivity {
 						createRegex();
 					}
 				});
-	}
-	
-	public void showCheatSheet(View view) {
-		Log.i("Cheat Sheet", "time to show it");
-		Intent intent = new Intent(this, DisplayCheatSheetActivity.class);
-		startActivity(intent);
 	}
 
 	public class SectionsPagerAdapter extends FragmentPagerAdapter {
