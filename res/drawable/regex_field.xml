@@ -3,11 +3,16 @@
 	<item>
         <shape>
             <stroke
-                android:color="#0095d5" />
+                android:color="#000" />
             <corners 
                 android:radius="4dp" />
             <solid 
-                android:color="#ABE3F7" />
+                android:color="#ffc500" />
         </shape>
 	</item>
 </selector>
+ 
+
+
+<!-- android:color="#ABE3F7" 
+ -->

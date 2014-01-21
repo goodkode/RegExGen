@@ -17,14 +17,12 @@ public final class R {
     public static final class attr {
     }
     public static final class dimen {
-        /**  Default screen margins, per the Android Design guidelines. 
-
+        /** 
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
         public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
         public static final int button_shape=0x7f020000;
@@ -34,45 +32,62 @@ public final class R {
         public static final int share_icon=0x7f020004;
     }
     public static final class id {
-        public static final int action_about=0x7f090026;
-        public static final int action_settings=0x7f090025;
-        public static final int button1=0x7f090000;
-        public static final int cheatSheet=0x7f09001c;
-        public static final int contAnything=0x7f090003;
-        public static final int containsText1=0x7f090005;
-        public static final int containsText1CheckBox=0x7f090004;
-        public static final int containsText2=0x7f090007;
-        public static final int containsText2CheckBox=0x7f090006;
-        public static final int containsText3=0x7f090009;
-        public static final int containsText3CheckBox=0x7f090008;
-        public static final int endsAnything=0x7f09000e;
-        public static final int endsText1=0x7f090010;
-        public static final int endsText1CheckBox=0x7f09000f;
-        public static final int endsText2=0x7f090012;
-        public static final int endsText2CheckBox=0x7f090011;
-        public static final int endsText3=0x7f090014;
-        public static final int endsText3CheckBox=0x7f090013;
-        public static final int lower_letter=0x7f090020;
-        public static final int notContainsText=0x7f09000b;
-        public static final int notContainsTextCheckBox=0x7f09000a;
-        public static final int notEndsText=0x7f090016;
-        public static final int notEndsTextCheckBox=0x7f090015;
-        public static final int number=0x7f090021;
-        public static final int pager=0x7f090017;
-        public static final int pager_title_strip=0x7f090018;
-        public static final int regexLabel=0x7f090019;
-        public static final int regexText=0x7f09001a;
-        public static final int section_label=0x7f090001;
-        public static final int shareButton=0x7f09001b;
-        public static final int sideText1=0x7f09001d;
-        public static final int sideText2=0x7f090002;
-        public static final int sideText3=0x7f09000d;
-        public static final int startsAnything=0x7f09001e;
-        public static final int startsWithCheckBox=0x7f090023;
-        public static final int startsWithText=0x7f090024;
-        public static final int swipe1=0x7f09000c;
-        public static final int symbol=0x7f090022;
-        public static final int upper_letter=0x7f09001f;
+        public static final int action_about=0x7f090037;
+        public static final int action_settings=0x7f090036;
+        public static final int button=0x7f090011;
+        public static final int cheatSheet=0x7f09002d;
+        public static final int cheat_sheet_title_strip=0x7f090000;
+        public static final int contAnything=0x7f090014;
+        public static final int containsText1=0x7f090016;
+        public static final int containsText1CheckBox=0x7f090015;
+        public static final int containsText2=0x7f090018;
+        public static final int containsText2CheckBox=0x7f090017;
+        public static final int containsText3=0x7f09001a;
+        public static final int containsText3CheckBox=0x7f090019;
+        public static final int endsAnything=0x7f09001f;
+        public static final int endsText1=0x7f090021;
+        public static final int endsText1CheckBox=0x7f090020;
+        public static final int endsText2=0x7f090023;
+        public static final int endsText2CheckBox=0x7f090022;
+        public static final int endsText3=0x7f090025;
+        public static final int endsText3CheckBox=0x7f090024;
+        public static final int left_column=0x7f090003;
+        public static final int left_row_1=0x7f090004;
+        public static final int left_row_2=0x7f090006;
+        public static final int left_row_3=0x7f090008;
+        public static final int lower_letter=0x7f090031;
+        public static final int notContainsText=0x7f09001c;
+        public static final int notContainsTextCheckBox=0x7f09001b;
+        public static final int notEndsText=0x7f090027;
+        public static final int notEndsTextCheckBox=0x7f090026;
+        public static final int number=0x7f090032;
+        public static final int pager=0x7f090028;
+        public static final int pager_title_strip=0x7f090029;
+        public static final int regexLabel=0x7f09002a;
+        public static final int regexText=0x7f09002b;
+        public static final int right_column=0x7f09000a;
+        public static final int right_row_1=0x7f09000b;
+        public static final int right_row_2=0x7f09000d;
+        public static final int right_row_3=0x7f09000f;
+        public static final int rules_parent=0x7f090002;
+        public static final int rules_scroll=0x7f090001;
+        public static final int section_label=0x7f090012;
+        public static final int shareButton=0x7f09002c;
+        public static final int sideText1=0x7f09002e;
+        public static final int sideText2=0x7f090013;
+        public static final int sideText3=0x7f09001e;
+        public static final int startsAnything=0x7f09002f;
+        public static final int startsWithCheckBox=0x7f090034;
+        public static final int startsWithText=0x7f090035;
+        public static final int swipe1=0x7f09001d;
+        public static final int symbol=0x7f090033;
+        public static final int textView1=0x7f090005;
+        public static final int textView2=0x7f090007;
+        public static final int textView3=0x7f090009;
+        public static final int textView4=0x7f09000c;
+        public static final int textView5=0x7f09000e;
+        public static final int textView6=0x7f090010;
+        public static final int upper_letter=0x7f090030;
     }
     public static final class layout {
         public static final int cheat_sheet=0x7f030000;
@@ -94,6 +109,7 @@ public final class R {
         public static final int app_name=0x7f060000;
         public static final int back_to_gen=0x7f06001d;
         public static final int but=0x7f06000f;
+        public static final int cheat_sheet_title=0x7f06001e;
         public static final int containsText=0x7f06000c;
         public static final int empty=0x7f060012;
         public static final int endsText=0x7f060010;
