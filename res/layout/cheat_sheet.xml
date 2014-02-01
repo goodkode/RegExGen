@@ -19,120 +19,6 @@
         android:textColor="#ffff" >
     </TextView>
     
-    <ScrollView
-        android:id="@+id/rules_scroll"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_below="@id/cheat_sheet_title_strip"  >
-	    <LinearLayout
-	        android:id="@+id/rules_parent"
-	        android:orientation="horizontal"
-	        android:layout_height="wrap_content"
-	        android:layout_width="match_parent"
-	        android:padding="15dp"
-	        android:baselineAligned="false" >
-	        
-	        <LinearLayout
-	            android:id="@+id/left_column"
-	            android:layout_weight="1"
-	            android:layout_width="0dp"
-	            android:layout_height="wrap_content"
-	            android:orientation="vertical" >
-
-	            <LinearLayout
-	                android:id="@+id/left_row_1"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:orientation="horizontal" >
-
-	            	<TextView
-			            android:id="@+id/textView1"
-			            android:layout_width="wrap_content"
-			            android:layout_height="wrap_content"
-			            android:text="textView1"  />
-	        	</LinearLayout>
-
-	        	<LinearLayout
-	        	    android:id="@+id/left_row_2"
-	        	    android:layout_width="wrap_content"
-	        	    android:layout_height="wrap_content"
-	        	    android:orientation="horizontal" >
- 
-	            	<TextView
-			            android:id="@+id/textView2"
-			            android:layout_width="wrap_content"
-			            android:layout_height="wrap_content"
-			            android:text="textView2"  />  
-	        	</LinearLayout>
-
-	        	<LinearLayout
-	        	    android:id="@+id/left_row_3"
-	        	    android:layout_width="wrap_content"
-	        	    android:layout_height="wrap_content"
-	        	    android:orientation="horizontal" >
- 
-	            	<TextView
-			            android:id="@+id/textView3"
-			            android:layout_width="wrap_content"
-			            android:layout_height="wrap_content"
-			            android:text="textView3"  />  
-	        	</LinearLayout>
-	        	  
-	        </LinearLayout>
-	        
-	        <LinearLayout
-	            android:id="@+id/right_column"
-	            android:layout_weight="1"
-	            android:layout_width="0dp"
-	            android:layout_height="wrap_content"
-	            android:orientation="vertical" >
-	            
-	            <LinearLayout
-	                android:id="@+id/right_row_1"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:orientation="horizontal" >
- 
-	            	<TextView
-			            android:id="@+id/textView4"
-			            android:layout_width="wrap_content"
-			            android:layout_height="wrap_content"
-			            android:text="textView4"  />  
-	        	</LinearLayout>
-
-	        	<LinearLayout
-	        	    android:id="@+id/right_row_2"
-	        	    android:layout_width="wrap_content"
-	        	    android:layout_height="wrap_content"
-	        	    android:orientation="horizontal" >
-  
-	            	<TextView
-			            android:id="@+id/textView5"
-			            android:layout_width="wrap_content"
-			            android:layout_height="wrap_content"
-			            android:text="textView5"  /> 
-	        	</LinearLayout>
-
-	        	<LinearLayout
-	        	    android:id="@+id/right_row_3"
-	        	    android:layout_width="wrap_content"
-	        	    android:layout_height="wrap_content"
-	        	    android:orientation="horizontal" >
-  
-	            	<TextView
-			            android:id="@+id/textView6"
-			            android:layout_width="wrap_content"
-			            android:layout_height="wrap_content"
-			            android:text="textView6"  /> 
-	        	</LinearLayout>
-	            
-	            
-	        </LinearLayout>
-	        
-	    </LinearLayout>
-    </ScrollView>
-        
-
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
@@ -140,7 +26,108 @@
         android:layout_alignParentBottom="true"
     	android:layout_margin="15dp"
         android:text="@string/back_to_gen"
+        android:textColor="#FFF"
         android:onClick="backToMain"
         android:background="@drawable/button_shape" />
+    
+    <ScrollView
+        android:id="@+id/rules_scroll"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/cheat_sheet_title_strip"
+        android:layout_above="@id/button" >
+	    <LinearLayout
+        android:id="@+id/rules_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="8dp"
+        android:baselineAligned="false" >
+	        
+	        <LinearLayout
+	            android:id="@+id/left_column"
+	            style="@style/LinearColumn" >
+
+	            <LinearLayout
+	                android:id="@+id/left_row_1"
+	                style="@style/LinearItem" >
+
+	            	<TextView
+			            style="@style/CheatCategory"
+			            android:text="@string/character_classes"  />
+	            		<TextView
+				            style="@style/CheatItem"
+				            android:text="@string/char_class_rules"  />
+	        	</LinearLayout>
+
+	        	<LinearLayout
+	        	    android:id="@+id/left_row_2"
+	        	    style="@style/LinearItem" >
+ 
+	            	<TextView
+			            style="@style/CheatCategory"
+			            android:text="@string/quantifiers"  />  
+			            <TextView
+				            style="@style/CheatItem"
+				            android:text="@string/quant_rules"  /> 
+	        	</LinearLayout>
+
+	        	<LinearLayout
+	        	    android:id="@+id/left_row_3"
+	        	    style="@style/LinearItem" >
+ 
+	            	<TextView
+			            style="@style/CheatCategory"
+			            android:text="@string/anchors"  /> 
+			            <TextView
+				            style="@style/CheatItem"
+				            android:text="@string/anch_rules"  />  
+	        	</LinearLayout>
+
+	        	<LinearLayout
+	        	    android:id="@+id/left_row_4"
+	        	    style="@style/LinearItem" >
+  
+	            	<TextView
+			            style="@style/CheatCategory"
+			            android:text="@string/metacharacters_escaped_by" /> 
+			            <TextView
+				            style="@style/CheatItem"
+				            android:text="@string/meta_rules"  /> 
+	        	</LinearLayout>	        	  
+	        </LinearLayout>
+	        
+	        <LinearLayout
+	            android:id="@+id/right_column"
+	            style="@style/LinearColumn" >
+	            
+	            <LinearLayout
+	                android:id="@+id/right_row_1"
+	                style="@style/LinearItem" >
+ 
+	            	<TextView
+			            style="@style/CheatCategory"
+			            android:text="@string/groups_and_ranges"  />  
+			            <TextView
+				            style="@style/CheatItem"
+				            android:text="@string/group_rang_rules"  /> 
+	        	</LinearLayout>
+
+	        	<LinearLayout
+	        	    android:id="@+id/right_row_2"
+	        	    style="@style/LinearItem" >
+  
+	            	<TextView
+			            style="@style/CheatCategory"
+			            android:text="@string/special_groups_and_characters"  /> 
+			            <TextView
+				            style="@style/CheatItem"
+				            android:text="@string/spec_gr_rules"  /> 
+	        	</LinearLayout>
+	            
+	        </LinearLayout>
+	        
+	</LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

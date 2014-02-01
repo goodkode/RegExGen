@@ -10,11 +10,6 @@
 	    android:layout_width="0dp"
 	    android:layout_height="match_parent">
 	    
-        <CheckBox
-        android:id="@+id/section_label"
-        android:layout_width="0dp"
-        android:layout_height="0dp" />
-	    
 	    <!-- TEXT on the side-->    
 		<TextView
 		    android:id="@+id/sideText2"
@@ -26,7 +21,7 @@
 		    android:text="@string/title_section2"
 		    android:textSize="25sp"
 		    android:textStyle="italic"
-		    android:textColor="#33b5e5"
+		    android:textColor="#36b8e8"
 	   		android:onClick="regCFlisteners" />
 		
     </RelativeLayout>
@@ -38,93 +33,80 @@
 	    android:layout_marginTop="20dp" >
 		
         <CheckBox
+            style="@style/CheckBoxText"
 	        android:id="@+id/contAnything"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
 	        android:text="@string/anything"
 	        android:checked="true"
 	        android:onClick="onCFCheckboxClicked" />
         
         <CheckBox
+            style="@style/CheckBoxText"
 	        android:id="@+id/containsText1CheckBox"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
 			android:layout_below="@id/contAnything"
 	        android:text="@string/empty"
 	        android:onClick="onCFCheckboxClicked" />
 		
 	        <EditText
+	            style="@style/InputText"
 		        android:id="@+id/containsText1"
 		        android:layout_width="150dp"
-		        android:layout_height="wrap_content"
 		        android:layout_toRightOf="@id/containsText1CheckBox"
 		        android:layout_alignBaseline="@id/containsText1CheckBox"
 		        android:paddingBottom="5dp"
 		        android:hint="@string/containsText"
-		        android:textSize="16sp"
-		        android:inputType="textNoSuggestions"
 		        android:onClick="regCFlisteners" />
         
 	    <CheckBox
+	        style="@style/CheckBoxText"
 	        android:id="@+id/containsText2CheckBox"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
 			android:layout_below="@id/containsText1CheckBox"
 	        android:text="@string/OR"
 	        android:onClick="onCFCheckboxClicked" />
         
 	        <EditText
+	            style="@style/InputText"
 		        android:id="@+id/containsText2"
 		        android:layout_width="130dp"
-		        android:layout_height="wrap_content"
 		        android:layout_toRightOf="@id/containsText2CheckBox"
 		        android:layout_alignBaseline="@id/containsText2CheckBox"
 		        android:paddingBottom="5dp"
 		        android:hint="@string/containsText"
-		        android:textSize="16sp"
-		        android:inputType="textNoSuggestions"
 		        android:onClick="regCFlisteners"  />
 	        
 	    <CheckBox
+	        style="@style/CheckBoxText"
 	        android:id="@+id/containsText3CheckBox"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
 			android:layout_below="@id/containsText2CheckBox"
 	        android:text="@string/OR"
 	        android:onClick="onCFCheckboxClicked" />
         
 	        <EditText
+	            style="@style/InputText"
 		        android:id="@+id/containsText3"
 		        android:layout_width="130dp"
-		        android:layout_height="wrap_content"
 		        android:layout_toRightOf="@id/containsText3CheckBox"
 		        android:layout_alignBaseline="@id/containsText3CheckBox"
 		        android:paddingBottom="5dp"
 		        android:hint="@string/containsText"
-		        android:textSize="16sp"
-		        android:inputType="textNoSuggestions"
 		        android:onClick="regCFlisteners"  />
 	        
 	    <!-- doesnt contain -->
 	    <CheckBox
+	        style="@style/CheckBoxText"
 	        android:id="@+id/notContainsTextCheckBox"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
 			android:layout_below="@id/containsText3CheckBox"
 			android:layout_marginTop="18dp"
 	        android:text="@string/but"
 	        android:onClick="onCFCheckboxClicked" />
         
 	        <EditText
+	            style="@style/InputText"
 		        android:id="@+id/notContainsText"
 		        android:layout_width="120dp"
-		        android:layout_height="wrap_content"
 		        android:layout_toRightOf="@id/notContainsTextCheckBox"
 		        android:layout_alignBaseline="@id/notContainsTextCheckBox"
 		        android:paddingBottom="5dp"
 		        android:hint="@string/notContainsText"
-		        android:textSize="16sp"
-		        android:inputType="textNoSuggestions"
 		        android:onClick="regCFlisteners"  />
         
 		<!-- swipe -->    

@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 public class MainRegexGen extends FragmentActivity {
 
+	static final String RT = "regextext";
 	SectionsPagerAdapter mSectionsPagerAdapter;
 	ViewPager mViewPager; // will host the section contents
 	TextView regExText;
@@ -44,7 +45,7 @@ public class MainRegexGen extends FragmentActivity {
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 		sw = "";
 		cnt1 = cnt2 = cnt3 = nCnt = "";
-		ew1 = ew2 = ew3 = nEw = "";
+		ew1 = ew2 = ew3 = nEw = "";		
 		createRegex();
 	}
 
@@ -71,16 +72,38 @@ public class MainRegexGen extends FragmentActivity {
 		ew = andsOrNots(withEscapes(ew1), withEscapes(ew2), withEscapes(ew3),
 				withEscapes(nEw));
 		regExText = (TextView) findViewById(R.id.regexText);
-		regExText.setText("^" + sw + ".*" + "  " + cnt
-				+ (cnt.compareTo("") == 0 ? "" : ".*") + "  " + ew + "$");
+		regExText.setText("^" + sw + ".*" + cnt
+				+ (cnt.compareTo("") == 0 ? "" : ".*") + ew + "$");
 	}
 
 	private String andsOrNots(String s1, String s2, String s3, String n) {
-		if (s1.compareTo("") == 0 && s2.compareTo("") == 0
-				&& s3.compareTo("") == 0 && n.compareTo("") == 0)
-			return "";
+		String output = "";
+		int count = 0;
+		if (s1.compareTo("") != 0) {
+			count++; 
+			output = output + s1; }
+		if (s2.compareTo("") != 0) {
+			count++;
+			if (count == 1)
+				output = output + s2;
+			else 
+				output = output + "|" + s2; }
+		if (s3.compareTo("") != 0) {
+			count++;
+			if (count == 1)
+				output = output + s3;
+			else 
+				output = output + "|" + s3; }
+		if (n.compareTo("") != 0) {
+			count++;
+			if (count == 1)
+				output = "?!" + n;
+			else 
+				output = output + "|?!" + n; }
+		if (count <= 1)
+			return output;
 		else
-			return "(" + s1 + "|" + s2 + "|" + s3 + "^" + n + ")";
+			return "(" + output + ")";
 	}
 
 	private String withEscapes(String orig) {
@@ -100,13 +123,12 @@ public class MainRegexGen extends FragmentActivity {
 	public void showCheatSheet(View view) {
 		Log.i("Cheat Sheet", "time to show it");
 		Intent intent = new Intent(this, DisplayCheatSheetActivity.class);
-		startActivity(intent);
+		startActivityForResult(intent, RESULT_OK);
 		overridePendingTransition(R.anim.cheat_enter, R.anim.main_exit);
 	}
 
 	// STARTS WITH FRAGMENT
 	public void onSWFCheckboxClicked(View view) {
-		regSWFlisteners(view);
 		boolean checked = ((CheckBox) view).isChecked();
 		switch (view.getId()) {
 		case R.id.startsAnything:
@@ -259,7 +281,6 @@ public class MainRegexGen extends FragmentActivity {
 
 	// CONTINUES WITH FRAGMENT
 	public void onCFCheckboxClicked(View view) {
-		regCFlisteners(view);
 		boolean checked = ((CheckBox) view).isChecked();
 		switch (view.getId()) {
 		case R.id.contAnything:
@@ -291,14 +312,16 @@ public class MainRegexGen extends FragmentActivity {
 				EditText contText = (EditText) findViewById(R.id.containsText1);
 				contText.requestFocus();
 				cnt1 = contText.getText().toString();
-			} else if (!((CheckBox) findViewById(R.id.containsText2CheckBox))
-					.isChecked()
+			} else {
+				cnt1 = "";
+				if (!((CheckBox) findViewById(R.id.containsText2CheckBox))
+							.isChecked()
 					&& !((CheckBox) findViewById(R.id.containsText3CheckBox))
 							.isChecked()
 					&& !((CheckBox) findViewById(R.id.notContainsTextCheckBox))
 							.isChecked()) {
 				((CheckBox) findViewById(R.id.contAnything)).setChecked(true);
-				cnt1 = cnt2 = cnt3 = nCnt = "";
+				cnt2 = cnt3 = nCnt = ""; }
 			}
 			break;
 		case R.id.containsText2CheckBox:
@@ -307,14 +330,16 @@ public class MainRegexGen extends FragmentActivity {
 				EditText contText = (EditText) findViewById(R.id.containsText2);
 				contText.requestFocus();
 				cnt2 = contText.getText().toString();
-			} else if (!((CheckBox) findViewById(R.id.containsText1CheckBox))
-					.isChecked()
+			} else {
+				cnt2 = "";
+				if (!((CheckBox) findViewById(R.id.containsText1CheckBox))
+							.isChecked()
 					&& !((CheckBox) findViewById(R.id.containsText3CheckBox))
 							.isChecked()
 					&& !((CheckBox) findViewById(R.id.notContainsTextCheckBox))
 							.isChecked()) {
 				((CheckBox) findViewById(R.id.contAnything)).setChecked(true);
-				cnt1 = cnt2 = cnt3 = nCnt = "";
+				cnt1 = cnt3 = nCnt = ""; }
 			}
 			break;
 		case R.id.containsText3CheckBox:
@@ -323,14 +348,16 @@ public class MainRegexGen extends FragmentActivity {
 				EditText contText = (EditText) findViewById(R.id.containsText3);
 				contText.requestFocus();
 				cnt3 = contText.getText().toString();
-			} else if (!((CheckBox) findViewById(R.id.containsText1CheckBox))
-					.isChecked()
+			} else {
+				cnt3 = "";
+				if (!((CheckBox) findViewById(R.id.containsText1CheckBox))
+							.isChecked()
 					&& !((CheckBox) findViewById(R.id.containsText2CheckBox))
 							.isChecked()
 					&& !((CheckBox) findViewById(R.id.notContainsTextCheckBox))
 							.isChecked()) {
 				((CheckBox) findViewById(R.id.contAnything)).setChecked(true);
-				cnt1 = cnt2 = cnt3 = nCnt = "";
+				cnt1 = cnt2 = nCnt = ""; }
 			}
 			break;
 		case R.id.notContainsTextCheckBox:
@@ -339,14 +366,16 @@ public class MainRegexGen extends FragmentActivity {
 				EditText contText = (EditText) findViewById(R.id.notContainsText);
 				contText.requestFocus();
 				nCnt = contText.getText().toString();
-			} else if (!((CheckBox) findViewById(R.id.containsText1CheckBox))
-					.isChecked()
+			} else {
+				nCnt = "";
+				if (!((CheckBox) findViewById(R.id.containsText1CheckBox))
+							.isChecked()
 					&& !((CheckBox) findViewById(R.id.containsText2CheckBox))
 							.isChecked()
 					&& !((CheckBox) findViewById(R.id.containsText3CheckBox))
 							.isChecked()) {
 				((CheckBox) findViewById(R.id.contAnything)).setChecked(true);
-				cnt1 = cnt2 = cnt3 = nCnt = "";
+				cnt1 = cnt2 = cnt3; }
 			}
 			break;
 		}
@@ -476,7 +505,6 @@ public class MainRegexGen extends FragmentActivity {
 
 	// ENDS WITH FRAGMENT
 	public void onEWFCheckboxClicked(View view) {
-		regEWFlisteners(view);
 		boolean checked = ((CheckBox) view).isChecked();
 		switch (view.getId()) {
 		case R.id.endsAnything:
