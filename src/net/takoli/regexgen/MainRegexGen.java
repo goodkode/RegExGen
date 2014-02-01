@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -36,6 +37,7 @@ public class MainRegexGen extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
+		this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
 		// Create the adapter that will return a fragment for the sections
 		mSectionsPagerAdapter = new SectionsPagerAdapter(
@@ -48,7 +50,6 @@ public class MainRegexGen extends FragmentActivity {
 		ew1 = ew2 = ew3 = nEw = "";		
 		createRegex();
 	}
-
 	@Override
 	// Menu about
 	public boolean onCreateOptionsMenu(Menu menu) {
