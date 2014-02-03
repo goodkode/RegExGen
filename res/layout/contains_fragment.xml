@@ -12,6 +12,7 @@
 	    
 	    <!-- TEXT on the side-->    
 		<TextView
+		    style="@style/SideText"
 		    android:id="@+id/sideText2"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
@@ -19,7 +20,6 @@
 		    android:singleLine="true"
 		    android:rotation="-90"
 		    android:text="@string/title_section2"
-		    android:textSize="25sp"
 		    android:textStyle="italic"
 		    android:textColor="#36b8e8"
 	   		android:onClick="regCFlisteners" />
@@ -30,7 +30,7 @@
 	    android:layout_weight="2"
 	    android:layout_width="0dp"
 	    android:layout_height="match_parent" 
-	    android:layout_marginTop="20dp" >
+	    android:layout_marginTop="15dp" >
 		
         <CheckBox
             style="@style/CheckBoxText"
