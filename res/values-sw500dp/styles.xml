@@ -1,26 +1,35 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- sw500dp -->
+	<style name="ScreenLoaded" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:text">sw500dp</item>
+    </style>
     
     <!-- FRAGEMENT 20/6/6 25 17 17-->
     <style name="TitleStrip" >
         <item name="android:textSize">24sp</item>
-        <item name="android:paddingBottom">8dp</item>
-        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">9dp</item>
+        <item name="android:paddingTop">9dp</item>
     </style>
     
     <style name="SideText" >
-        <item name="android:textSize">32sp</item>
+        <item name="android:textSize">36sp</item>
+    </style>
+    
+    <style name="SelectorLayout" >
+        <item name="android:layout_marginTop">30dp</item>
     </style>
     
     <style name="CheckBoxText" >
         <item name="android:layout_width">wrap_content</item>
 	    <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">24sp</item>
         <item name="android:textColor">#444</item>
+        <item name="android:padding">4dp</item>
     </style>
     
     <style name="InputText" >
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">24sp</item>
         <item name="android:textStyle">italic</item>
         <item name="android:textColor">#444</item>
         <item name="android:textColorHint">#BBB</item>
@@ -29,17 +38,17 @@
     
     <!-- MAIN 18 22/260/6 15/6/6/10 18-->
     <style name="RegexLabel" >
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">24sp</item>
     </style>
     <style name="RegexText" >
-        <item name="android:textSize">25sp</item>
+        <item name="android:textSize">30sp</item>
         <item name="android:layout_width">320dp</item>
         <item name="android:layout_margin">8dp</item>
         </style>
     <style name="ShareRegex" >
-        <item name="android:textSize">18sp</item>
-        <item name="android:paddingLeft">6sp</item>
-        <item name="android:paddingRight">6sp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:paddingLeft">8sp</item>
+        <item name="android:paddingRight">8sp</item>
         <item name="android:layout_marginTop">10dp</item>
     </style>
     <style name="CheatButton" >
@@ -79,4 +88,5 @@
         <item name="android:textColor">#000</item>
     </style>
 
+<!-- sw500dp -->    
 </resources>

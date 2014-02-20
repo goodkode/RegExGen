@@ -1,5 +1,7 @@
 package net.takoli.regexgen;
 
+import java.util.regex.Pattern;
+
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +12,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,6 +23,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainRegexGen extends FragmentActivity {
@@ -49,6 +53,25 @@ public class MainRegexGen extends FragmentActivity {
 		cnt1 = cnt2 = cnt3 = nCnt = "";
 		ew1 = ew2 = ew3 = nEw = "";		
 		createRegex();
+		
+		//DIAGNOSTICS
+		DisplayMetrics dm = getResources().getDisplayMetrics();
+		float dpi = dm.density;
+		int width = dm.widthPixels;
+		int height = dm.heightPixels;
+		int dpi_width = (int) (width / dpi);
+		TextView tvDiag = (TextView) findViewById(R.id.screen_diag);
+		tvDiag.setText(width + "/" + height + " ("+dpi+")::" + dpi_width);
+		
+		//Update layout weights for short screen
+		if ((int) (height / dpi) < 600) {
+			LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(
+					LinearLayout.LayoutParams.WRAP_CONTENT, 
+					LinearLayout.LayoutParams.WRAP_CONTENT);
+			p.height = 0;
+			p.weight = 6;
+			mViewPager.setLayoutParams(p);
+		}
 	}
 	@Override
 	// Menu about
@@ -66,18 +89,29 @@ public class MainRegexGen extends FragmentActivity {
 
 	// this creates the REGEX
 	public void createRegex() {
-		String cnt, ew;
-		sw = withEscapes(sw);
-		cnt = andsOrNots(withEscapes(cnt1), withEscapes(cnt2),
-				withEscapes(cnt3), withEscapes(nCnt));
-		ew = andsOrNots(withEscapes(ew1), withEscapes(ew2), withEscapes(ew3),
-				withEscapes(nEw));
+		String S, C, E;
+		S = C = E = "";
+		if (sw.compareTo(".*") != 0) {	// if not empty, add '/b' to the front
+			S = withEscapes(sw);
+			S = "\\b" + S;
+		}
+		C = concatParts(withEscapes(cnt1), withEscapes(cnt2), withEscapes(cnt3));
+		if (C.compareTo("") != 0)
+			C = ".*" + C + ".*";
+		else
+			C = ".*";
+		if (nCnt.compareTo("") != 0)	// implement negative lookahead
+			C = "(?!.*" + nCnt + ")" + C;
+		E = concatParts(withEscapes(ew1), withEscapes(ew2), withEscapes(ew3));
+		if (nEw.compareTo("") != 0)		// implement negative lookbehind
+			nEw = "(?<!" + nEw + ")";
+		if (E.compareTo("") != 0)
+			E = E + nEw + "\\b";
 		regExText = (TextView) findViewById(R.id.regexText);
-		regExText.setText("^" + sw + ".*" + cnt
-				+ (cnt.compareTo("") == 0 ? "" : ".*") + ew + "$");
+		regExText.setText(S + C + E);
 	}
 
-	private String andsOrNots(String s1, String s2, String s3, String n) {
+	private String concatParts(String s1, String s2, String s3) {
 		String output = "";
 		int count = 0;
 		if (s1.compareTo("") != 0) {
@@ -95,12 +129,6 @@ public class MainRegexGen extends FragmentActivity {
 				output = output + s3;
 			else 
 				output = output + "|" + s3; }
-		if (n.compareTo("") != 0) {
-			count++;
-			if (count == 1)
-				output = "?!" + n;
-			else 
-				output = output + "|?!" + n; }
 		if (count <= 1)
 			return output;
 		else
@@ -108,8 +136,24 @@ public class MainRegexGen extends FragmentActivity {
 	}
 
 	private String withEscapes(String orig) {
-		String escaped = orig;
-		return escaped;
+		StringBuilder escaped = new StringBuilder();
+		char c;
+		for (int i = 0; i < orig.length(); i++) {
+			c = orig.charAt(i);
+			if (c == '.' || c == '?' || c == '*' || c == '+'
+					|| c == '&' || c == ':' || c == '{' || c == '}'
+					|| c == '[' || c == ']' || c == '(' || c == ')' 
+					|| c == '^' || c == '$')
+				escaped.append("\\" + c);
+			else if (c == '\\')
+				escaped.append("\\\\");	// backslash char
+			else if (c == ' ')  
+				escaped.append("\\s");	// space char
+			else
+				escaped.append(c);
+		}
+		return escaped.toString();
+		//return Pattern.quote(orig);
 	}
 	
 	public void onShareClick(View view) {

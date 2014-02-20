@@ -26,10 +26,10 @@
     </RelativeLayout>
     
 	<RelativeLayout 
+	    style="@style/SelectorLayout"
 	    android:layout_weight="2"
 	    android:layout_width="0dp"
-	    android:layout_height="match_parent"
-        android:layout_marginTop="15dp" >
+	    android:layout_height="match_parent" >
 	
 	    <CheckBox
 	        style="@style/CheckBoxText"

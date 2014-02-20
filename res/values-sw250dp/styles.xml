@@ -1,26 +1,35 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- sw250dp -->
+	<style name="ScreenLoaded" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:text">sw250dp</item>
+    </style>
     
     <!-- FRAGEMENT 20/6/6 25 17 17-->
     <style name="TitleStrip" >
-        <item name="android:textSize">20sp</item>
-        <item name="android:paddingBottom">6dp</item>
-        <item name="android:paddingTop">6dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingTop">5dp</item>
     </style>
     
     <style name="SideText" >
-        <item name="android:textSize">25sp</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    
+    <style name="SelectorLayout" >
+        <item name="android:layout_marginTop">10dp</item>
     </style>
     
     <style name="CheckBoxText" >
         <item name="android:layout_width">wrap_content</item>
 	    <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">17sp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textColor">#444</item>
-        </style>
+        <item name="android:background">@drawable/btn_check_label_background</item>
+    </style>
     
     <style name="InputText" >
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">17sp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textStyle">italic</item>
         <item name="android:textColor">#444</item>
         <item name="android:textColorHint">#BBB</item>
@@ -32,18 +41,18 @@
         <item name="android:textSize">18sp</item>
     </style>
     <style name="RegexText" >
-        <item name="android:textSize">25sp</item>
-        <item name="android:layout_width">260dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:layout_width">220dp</item>
         <item name="android:layout_margin">6dp</item>
         </style>
     <style name="ShareRegex" >
         <item name="android:textSize">18sp</item>
-        <item name="android:paddingLeft">6sp</item>
-        <item name="android:paddingRight">6sp</item>
+        <item name="android:paddingLeft">8sp</item>
+        <item name="android:paddingRight">8sp</item>
         <item name="android:layout_marginTop">10dp</item>
     </style>
     <style name="CheatButton" >
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">15sp</item>
     </style>
     
     <!-- CHEATSHEET 12 15 3/15 3/12-->
@@ -52,13 +61,13 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:orientation">vertical</item>
-        <item name="android:padding">12dp</item>
+        <item name="android:padding">10dp</item>
     </style>
     
     <style name="LinearItem" >
         <item name="android:layout_height">fill_parent</item>
         <item name="android:layout_width">fill_parent</item>
-        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingTop">12dp</item>
         <item name="android:orientation">vertical</item>
     </style>
     
@@ -67,7 +76,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">#6633b5e5</item>
         <item name="android:padding">3dp</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">13sp</item>
         <item name="android:textColor">#000</item>
     </style>
     
@@ -78,5 +87,6 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">#000</item>
     </style>
-
+    
+<!-- sw250dp -->
 </resources>

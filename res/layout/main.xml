@@ -10,82 +10,94 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/pager"
-        android:layout_weight="4"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_weight="4"
         android:background="#fff"
         app:context=".MainRegexGen" >
 
         <android.support.v4.view.PagerTitleStrip
-            style="@style/TitleStrip"
             android:id="@+id/pager_title_strip"
+            style="@style/TitleStrip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:background="#33b5e5"
             android:textColor="#FFF" >
         </android.support.v4.view.PagerTitleStrip>
-        
     </android.support.v4.view.ViewPager>
 
     <RelativeLayout
         android:id="@+id/main_innerlayout"
-        android:layout_weight="5"
         android:layout_width="match_parent"
-        android:layout_height="0dp" 
-        android:padding="15dp"
-        android:background="#6633b5e5" >
-	    
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:background="#6633b5e5"
+        android:padding="15dp" >
+
+			        <!-- DIAGNOSTICS -->
+			        <TextView
+			            android:id="@+id/screen_diag"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:text="@string/screen_props"
+			            android:textSize="8sp" />
+			        <TextView
+			            android:id="@+id/screen_loaded"
+			            style="@style/ScreenLoaded"
+			            android:layout_below="@id/screen_diag"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:textSize="8sp" />
+
         <TextView
+            android:id="@+id/regexLabel"
             style="@style/RegexLabel"
-	        android:id="@+id/regexLabel"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_centerHorizontal="true"
-	        android:layout_alignParentTop="true"
-	        android:text="@string/regexLabel"
-	        android:textColor="#FFF" />
-	    
-	    <TextView
-	        style="@style/RegexText"
-	        android:id="@+id/regexText"
-	        android:layout_height="wrap_content"
-	        android:layout_centerHorizontal="true"
-	        android:layout_below="@id/regexLabel"
-	        android:padding="4dp"
-	        android:text="@string/regexText"
-	        android:textStyle="bold"
-	        android:textColor="#666" 
-	        android:gravity="center"
-	        android:textIsSelectable="true"
-	        android:background="@drawable/regex_field" />
-	    
-	    <Button
-	        style="@style/ShareRegex"
-	        android:id="@+id/shareButton"
-	        android:layout_width="wrap_content"
-	        android:layout_height="30dp"
-	        android:layout_below="@+id/regexText"
-	        android:layout_centerHorizontal="true"
-	        android:text="@string/shareButton"
-	        android:textColor="#FFF" 
-	        android:drawableLeft="@drawable/ic_menu_share"
-	        android:onClick="onShareClick"
-	        android:background="@drawable/button_shape" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/regexLabel"
+            android:textColor="#FFF" />
 
-	    <Button
-	        style="@style/CheatButton"
-	        android:id="@+id/cheatSheet"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentBottom="true"
-	        android:text="@string/regex_cheat_sheet" 
-	        android:textColor="#FFF" 
-	        android:onClick="showCheatSheet"
-	        android:background="@drawable/button_shape" />
-            
+        <TextView
+            android:id="@+id/regexText"
+            style="@style/RegexText"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/regexLabel"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/regex_field"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="@string/regexText"
+            android:textColor="#666"
+            android:textIsSelectable="true"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/shareButton"
+            style="@style/ShareRegex"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@+id/regexText"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_shape"
+            android:drawableLeft="@drawable/ic_menu_share"
+            android:onClick="onShareClick"
+            android:text="@string/shareButton"
+            android:textColor="#FFF" />
+
+        <Button
+            android:id="@+id/cheatSheet"
+            style="@style/CheatButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/button_shape"
+            android:onClick="showCheatSheet"
+            android:text="@string/regex_cheat_sheet"
+            android:textColor="#FFF" />
     </RelativeLayout>
-</LinearLayout>
 
-<!-- title:20; padding: 15; label:18; regex:22; sharebutton:15 
- -->
+</LinearLayout>
+<!--  title:20; padding: 15; label:18; regex:22; sharebutton:15  -->
