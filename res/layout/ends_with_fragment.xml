@@ -54,7 +54,6 @@
 	        <EditText
 	            style="@style/InputText"
 		        android:id="@+id/endsText1"
-		        android:layout_width="150dp"
 		        android:layout_toRightOf="@id/endsText1CheckBox"
 		        android:layout_alignBaseline="@id/endsText1CheckBox"
 		        android:paddingBottom="5dp"
@@ -71,7 +70,6 @@
 	        <EditText
 	            style="@style/InputText"
 		        android:id="@+id/endsText2"
-		        android:layout_width="130dp"
 		        android:layout_toRightOf="@id/endsText2CheckBox"
 		        android:layout_alignBaseline="@id/endsText2CheckBox"
 		        android:paddingBottom="5dp"
@@ -88,7 +86,6 @@
 	        <EditText
 	            style="@style/InputText"
 		        android:id="@+id/endsText3"
-		        android:layout_width="130dp"
 		        android:layout_toRightOf="@id/endsText3CheckBox"
 		        android:layout_alignBaseline="@id/endsText3CheckBox"
 		        android:paddingBottom="5dp"
@@ -107,7 +104,6 @@
 	        <EditText
 	            style="@style/InputText"
 		        android:id="@+id/notEndsText"
-		        android:layout_width="120dp"
 		        android:layout_toRightOf="@id/notEndsTextCheckBox"
 		        android:layout_alignBaseline="@id/notEndsTextCheckBox"
 		        android:paddingBottom="5dp"

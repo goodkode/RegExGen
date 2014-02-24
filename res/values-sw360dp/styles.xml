@@ -28,6 +28,7 @@
     
     <style name="InputText" >
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">140dp</item>
         <item name="android:textSize">17sp</item>
         <item name="android:textStyle">italic</item>
         <item name="android:textColor">#444</item>
@@ -46,9 +47,9 @@
         </style>
     <style name="ShareRegex" >
         <item name="android:textSize">18sp</item>
-        <item name="android:paddingLeft">6sp</item>
-        <item name="android:paddingRight">6sp</item>
-        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:paddingLeft">20sp</item>
+        <item name="android:paddingRight">20sp</item>
+        <item name="android:layout_marginTop">6dp</item>
     </style>
     <style name="CheatButton" >
         <item name="android:textSize">20sp</item>

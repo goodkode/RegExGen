@@ -27,13 +27,14 @@ public final class R {
         public static final int ic_launcher=0x7f020007;
         public static final int ic_menu_share=0x7f020008;
         public static final int regex_field=0x7f020009;
-        public static final int share_icon=0x7f02000a;
+        public static final int regex_gui=0x7f02000a;
+        public static final int share_icon=0x7f02000b;
     }
     public static final class id {
-        public static final int action_about=0x7f080036;
-        public static final int action_settings=0x7f080035;
+        public static final int action_about=0x7f080035;
+        public static final int action_settings=0x7f080034;
         public static final int button=0x7f080002;
-        public static final int cheatSheet=0x7f08002c;
+        public static final int cheatSheet=0x7f08002a;
         public static final int cheat_sheet_title_strip=0x7f080001;
         public static final int contAnything=0x7f08000e;
         public static final int containsText1=0x7f080010;
@@ -55,36 +56,35 @@ public final class R {
         public static final int left_row_2=0x7f080007;
         public static final int left_row_3=0x7f080008;
         public static final int left_row_4=0x7f080009;
-        public static final int lower_letter=0x7f080030;
+        public static final int lower_letter=0x7f08002e;
         public static final int main_innerlayout=0x7f080026;
         public static final int main_layout=0x7f080023;
         public static final int notContainsText=0x7f080016;
         public static final int notContainsTextCheckBox=0x7f080015;
         public static final int notEndsText=0x7f080022;
         public static final int notEndsTextCheckBox=0x7f080021;
-        public static final int number=0x7f080031;
+        public static final int number=0x7f08002f;
         public static final int pager=0x7f080024;
         public static final int pager_title_strip=0x7f080025;
-        public static final int regexLabel=0x7f080029;
-        public static final int regexText=0x7f08002a;
+        public static final int regexLabel=0x7f080027;
+        public static final int regexText=0x7f080028;
         public static final int right_column=0x7f08000a;
         public static final int right_row_1=0x7f08000b;
         public static final int right_row_2=0x7f08000c;
         public static final int rules_parent=0x7f080004;
         public static final int rules_scroll=0x7f080003;
-        public static final int screen_diag=0x7f080027;
-        public static final int screen_loaded=0x7f080028;
         public static final int section_label=0x7f080018;
-        public static final int shareButton=0x7f08002b;
-        public static final int sideText1=0x7f08002d;
+        public static final int shareButton=0x7f080029;
+        public static final int sideText1=0x7f08002b;
         public static final int sideText2=0x7f08000d;
         public static final int sideText3=0x7f080019;
-        public static final int startsAnything=0x7f08002e;
-        public static final int startsWithCheckBox=0x7f080033;
-        public static final int startsWithText=0x7f080034;
-        public static final int swipe1=0x7f080017;
-        public static final int symbol=0x7f080032;
-        public static final int upper_letter=0x7f08002f;
+        public static final int startsAnything=0x7f08002c;
+        public static final int startsWithCheckBox=0x7f080031;
+        public static final int startsWithText=0x7f080032;
+        public static final int swipe1=0x7f080033;
+        public static final int swipe2=0x7f080017;
+        public static final int symbol=0x7f080030;
+        public static final int upper_letter=0x7f08002d;
     }
     public static final class layout {
         public static final int about_dialog=0x7f030000;
@@ -163,7 +163,7 @@ public final class R {
         public static final int RegexLabel=0x7f060006;
         public static final int RegexText=0x7f060007;
         /**  sw250dp 
- sw___dp 
+ sw360dp 
  sw500dp 
          */
         public static final int ScreenLoaded=0x7f060000;

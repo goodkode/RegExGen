@@ -1,8 +1,5 @@
 package net.takoli.regexgen;
 
-import java.util.regex.Pattern;
-
-import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,10 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -57,11 +51,11 @@ public class MainRegexGen extends FragmentActivity {
 		//DIAGNOSTICS
 		DisplayMetrics dm = getResources().getDisplayMetrics();
 		float dpi = dm.density;
-		int width = dm.widthPixels;
+//		int width = dm.widthPixels;
 		int height = dm.heightPixels;
-		int dpi_width = (int) (width / dpi);
-		TextView tvDiag = (TextView) findViewById(R.id.screen_diag);
-		tvDiag.setText(width + "/" + height + " ("+dpi+")::" + dpi_width);
+//		int dpi_width = (int) (width / dpi);
+//		TextView tvDiag = (TextView) findViewById(R.id.screen_diag);
+//		tvDiag.setText(width + "/" + height + " ("+dpi+")::" + dpi_width);
 		
 		//Update layout weights for short screen
 		if ((int) (height / dpi) < 600) {
@@ -73,40 +67,45 @@ public class MainRegexGen extends FragmentActivity {
 			mViewPager.setLayoutParams(p);
 		}
 	}
-	@Override
-	// Menu about
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true; }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-		Log.i("about", "pressed");
-		DialogFragment about = new AboutDialogFragment();
-		about.show(getFragmentManager(), "test");
-		return true;
-    }
+//	@Override
+//	// Menu about
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		getMenuInflater().inflate(R.menu.main, menu);
+//		return true; }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item)
+//    {
+//		Log.i("about", "pressed");
+//		DialogFragment about = new AboutDialogFragment();
+//		about.show(getFragmentManager(), "test");
+//		return true;
+//    }
 
 	// this creates the REGEX
 	public void createRegex() {
-		String S, C, E;
-		S = C = E = "";
-		if (sw.compareTo(".*") != 0) {	// if not empty, add '/b' to the front
-			S = withEscapes(sw);
-			S = "\\b" + S;
-		}
+		String S, C, Cn, E, En;
+		S = C = Cn = E = En = "";
+		
+		if (sw.compareTo("") != 0 && sw.charAt(0) != '[' && sw.charAt(sw.length()-1) != ']')
+			sw = withEscapes(sw);
+		S = "\\b" + sw;
+		
 		C = concatParts(withEscapes(cnt1), withEscapes(cnt2), withEscapes(cnt3));
 		if (C.compareTo("") != 0)
 			C = ".*" + C + ".*";
 		else
 			C = ".*";
 		if (nCnt.compareTo("") != 0)	// implement negative lookahead
-			C = "(?!.*" + nCnt + ")" + C;
+			Cn = "(?!.*" + nCnt + ")";
+		C = Cn + C;
+		
 		E = concatParts(withEscapes(ew1), withEscapes(ew2), withEscapes(ew3));
 		if (nEw.compareTo("") != 0)		// implement negative lookbehind
-			nEw = "(?<!" + nEw + ")";
+			En = "(?<!" + nEw + ")";
+		E = E + En;
 		if (E.compareTo("") != 0)
-			E = E + nEw + "\\b";
+			E += "\\b";
+
 		regExText = (TextView) findViewById(R.id.regexText);
 		regExText.setText(S + C + E);
 	}
@@ -166,7 +165,7 @@ public class MainRegexGen extends FragmentActivity {
 	}
 	
 	public void showCheatSheet(View view) {
-		Log.i("Cheat Sheet", "time to show it");
+		//Log.i("Cheat Sheet", "time to show it");
 		Intent intent = new Intent(this, DisplayCheatSheetActivity.class);
 		startActivityForResult(intent, RESULT_OK);
 		overridePendingTransition(R.anim.cheat_enter, R.anim.main_exit);
@@ -243,7 +242,7 @@ public class MainRegexGen extends FragmentActivity {
 				((CheckBox) findViewById(R.id.symbol)).setChecked(false);
 				EditText startsWithText = (EditText) findViewById(R.id.startsWithText);
 				startsWithText.requestFocus();
-				sw = startsWithText.getText().toString();
+				sw = withEscapes(startsWithText.getText().toString());
 			} else {
 				((CheckBox) findViewById(R.id.startsAnything)).setChecked(true);
 				sw = "";
@@ -276,7 +275,7 @@ public class MainRegexGen extends FragmentActivity {
 	}
 
 	public void regSWFlisteners(View view) {
-		Log.i("takoli", "regSWFlisteners");
+		//Log.i("takoli", "regSWFlisteners");
 		// LISTENER: startsWithText changes sent to regex right away
 		((EditText) findViewById(R.id.startsWithText))
 				.addTextChangedListener(new TextWatcher() {
@@ -429,7 +428,7 @@ public class MainRegexGen extends FragmentActivity {
 	}
 
 	public void regCFlisteners(View view) {
-		Log.i("takoli", "regCFlisteners");
+		//Log.i("takoli", "regCFlisteners");
 		// LISTENTER: containsText1 changes sent to regex right away
 		((EditText) findViewById(R.id.containsText1))
 				.addTextChangedListener(new TextWatcher() {
@@ -581,14 +580,16 @@ public class MainRegexGen extends FragmentActivity {
 				EditText contText = (EditText) findViewById(R.id.endsText1);
 				contText.requestFocus();
 				ew1 = contText.getText().toString();
-			} else if (!((CheckBox) findViewById(R.id.endsText2CheckBox))
+			} else {
+				ew1 = "";
+				if (!((CheckBox) findViewById(R.id.endsText2CheckBox))
 					.isChecked()
 					&& !((CheckBox) findViewById(R.id.endsText3CheckBox))
 							.isChecked()
 					&& !((CheckBox) findViewById(R.id.notEndsTextCheckBox))
 							.isChecked()) {
 				((CheckBox) findViewById(R.id.endsAnything)).setChecked(true);
-				ew1 = ew2 = ew3 = nEw = "";
+				ew1 = ew2 = ew3 = nEw = ""; }
 			}
 			break;
 		case R.id.endsText2CheckBox:
@@ -597,14 +598,16 @@ public class MainRegexGen extends FragmentActivity {
 				EditText contText = (EditText) findViewById(R.id.endsText2);
 				contText.requestFocus();
 				ew2 = contText.getText().toString();
-			} else if (!((CheckBox) findViewById(R.id.endsText1CheckBox))
+			} else {
+				ew2 = "";
+				if (!((CheckBox) findViewById(R.id.endsText1CheckBox))
 					.isChecked()
 					&& !((CheckBox) findViewById(R.id.endsText3CheckBox))
 							.isChecked()
 					&& !((CheckBox) findViewById(R.id.notEndsTextCheckBox))
 							.isChecked()) {
 				((CheckBox) findViewById(R.id.endsAnything)).setChecked(true);
-				ew1 = ew2 = ew3 = nEw = "";
+				ew1 = ew2 = ew3 = nEw = ""; }
 			}
 			break;
 		case R.id.endsText3CheckBox:
@@ -613,14 +616,16 @@ public class MainRegexGen extends FragmentActivity {
 				EditText contText = (EditText) findViewById(R.id.endsText3);
 				contText.requestFocus();
 				ew3 = contText.getText().toString();
-			} else if (!((CheckBox) findViewById(R.id.endsText1CheckBox))
+			} else {
+				ew3 = "";
+				if (!((CheckBox) findViewById(R.id.endsText1CheckBox))
 					.isChecked()
 					&& !((CheckBox) findViewById(R.id.endsText2CheckBox))
 							.isChecked()
 					&& !((CheckBox) findViewById(R.id.notEndsTextCheckBox))
 							.isChecked()) {
 				((CheckBox) findViewById(R.id.endsAnything)).setChecked(true);
-				ew1 = ew2 = ew3 = nEw = "";
+				ew1 = ew2 = ew3 = nEw = ""; }
 			}
 			break;
 		case R.id.notEndsTextCheckBox:
@@ -629,14 +634,16 @@ public class MainRegexGen extends FragmentActivity {
 				EditText contText = (EditText) findViewById(R.id.notEndsText);
 				contText.requestFocus();
 				nEw = contText.getText().toString();
-			} else if (!((CheckBox) findViewById(R.id.endsText1CheckBox))
+			} else {
+				nEw = "";
+				if (!((CheckBox) findViewById(R.id.endsText1CheckBox))
 					.isChecked()
 					&& !((CheckBox) findViewById(R.id.endsText2CheckBox))
 							.isChecked()
 					&& !((CheckBox) findViewById(R.id.endsText3CheckBox))
 							.isChecked()) {
 				((CheckBox) findViewById(R.id.endsAnything)).setChecked(true);
-				ew1 = ew2 = ew3 = nEw = "";
+				ew1 = ew2 = ew3 = nEw = ""; }
 			}
 			break;
 		}
@@ -645,7 +652,7 @@ public class MainRegexGen extends FragmentActivity {
 	}
 
 	public void regEWFlisteners(View view) {
-		Log.i("takoli", "regEWFlisteners");
+		//Log.i("takoli", "regEWFlisteners");
 		// LISTENTER: endsText1 changes sent to regex right away
 		((EditText) findViewById(R.id.endsText1))
 				.addTextChangedListener(new TextWatcher() {
@@ -811,7 +818,7 @@ public class MainRegexGen extends FragmentActivity {
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
 			currentPage = getArguments().getInt(ARG_SECTION_NUMBER);
-			// Log.i("onCreateView", "page: "+currentPage);
+			//Log.i("onCreateView", "page: "+currentPage);
 			thisView = null;
 			switch (currentPage) {
 			case 1:
@@ -835,17 +842,17 @@ public class MainRegexGen extends FragmentActivity {
 		public void setUserVisibleHint(final boolean visible) {
 			super.setUserVisibleHint(visible);
 			if (visible && currentPage == 1) {
-				Log.i("setUserVisibleHint", "suvh StartsWith");
+				//Log.i("setUserVisibleHint", "suvh StartsWith");
 				((TextView) thisView.findViewById(R.id.sideText1))
 						.performClick();
 			}
 			if (visible && currentPage == 2) {
-				Log.i("setUserVisibleHint", "suvh Contains");
+				//Log.i("setUserVisibleHint", "suvh Contains");
 				((TextView) thisView.findViewById(R.id.sideText2))
 						.performClick();
 			}
 			if (visible && currentPage == 3) {
-				Log.i("setUserVisibleHint", "suvh EndsWith");
+				//Log.i("setUserVisibleHint", "suvh EndsWith");
 				((TextView) thisView.findViewById(R.id.sideText3))
 						.performClick();
 			}

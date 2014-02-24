@@ -49,7 +49,6 @@
 	        <EditText
 	            style="@style/InputText"
 		        android:id="@+id/containsText1"
-		        android:layout_width="150dp"
 		        android:layout_toRightOf="@id/containsText1CheckBox"
 		        android:layout_alignBaseline="@id/containsText1CheckBox"
 		        android:paddingBottom="5dp"
@@ -66,7 +65,6 @@
 	        <EditText
 	            style="@style/InputText"
 		        android:id="@+id/containsText2"
-		        android:layout_width="130dp"
 		        android:layout_toRightOf="@id/containsText2CheckBox"
 		        android:layout_alignBaseline="@id/containsText2CheckBox"
 		        android:paddingBottom="5dp"
@@ -83,7 +81,6 @@
 	        <EditText
 	            style="@style/InputText"
 		        android:id="@+id/containsText3"
-		        android:layout_width="130dp"
 		        android:layout_toRightOf="@id/containsText3CheckBox"
 		        android:layout_alignBaseline="@id/containsText3CheckBox"
 		        android:paddingBottom="5dp"
@@ -102,7 +99,6 @@
 	        <EditText
 	            style="@style/InputText"
 		        android:id="@+id/notContainsText"
-		        android:layout_width="120dp"
 		        android:layout_toRightOf="@id/notContainsTextCheckBox"
 		        android:layout_alignBaseline="@id/notContainsTextCheckBox"
 		        android:paddingBottom="5dp"
@@ -110,16 +106,24 @@
 		        android:onClick="regCFlisteners"  />
         
 		<!-- swipe -->    
-		<TextView
-	        android:id="@+id/swipe1"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentBottom="true"
-	        android:layout_alignParentLeft="true"
-	        android:padding="8dp"
-	        android:text="@string/swipe"
-	        android:textSize="12sp"
-	        android:textStyle="italic"
-	        android:textColor="#33b5e5" />
+		<LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"	>	
+		    <TextView
+		        android:id="@+id/swipe2"
+		        android:layout_width="0dp"
+		        android:layout_height="26dp"
+		        android:layout_weight="1"
+		        android:gravity="center"
+		        android:text="@string/swipe"
+		        android:textSize="13sp"
+		        android:textStyle="italic"
+		        android:textColor="#33b5e5" />
+			<TextView 
+			    android:layout_width="0dp"
+			    android:layout_height="20dp"
+			    android:layout_weight="1" />
+		</LinearLayout>
     </RelativeLayout>
 </LinearLayout>

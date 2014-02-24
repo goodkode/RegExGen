@@ -36,7 +36,7 @@
         android:padding="15dp" >
 
 			        <!-- DIAGNOSTICS -->
-			        <TextView
+			        <!-- <TextView
 			            android:id="@+id/screen_diag"
 			            android:layout_width="wrap_content"
 			            android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
 			            android:layout_below="@id/screen_diag"
 			            android:layout_width="wrap_content"
 			            android:layout_height="wrap_content"
-			            android:textSize="8sp" />
+			            android:textSize="8sp" /> -->
 
         <TextView
             android:id="@+id/regexLabel"
@@ -78,7 +78,7 @@
             android:id="@+id/shareButton"
             style="@style/ShareRegex"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
             android:layout_below="@+id/regexText"
             android:layout_centerHorizontal="true"
             android:background="@drawable/button_shape"

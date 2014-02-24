@@ -3,7 +3,6 @@ package net.takoli.regexgen;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,7 +25,7 @@ public class DisplayCheatSheetActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-		Log.i("about", "pressed");
+		//Log.i("about", "pressed");
 		DialogFragment about = new AboutDialogFragment();
 		about.show(getFragmentManager(), "test");
 		return true;
