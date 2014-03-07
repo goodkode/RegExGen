@@ -56,37 +56,36 @@
         <item name="android:textSize">15sp</item>
     </style>
     
-    <!-- CHEATSHEET 12 15 3/15 3/12-->
-    <style name="LinearColumn" >
-        <item name="android:layout_weight">1</item>
+    <!-- CHEATSHEET sw250dp -->
+    <style name="TableStyle" >
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:orientation">vertical</item>
-        <item name="android:padding">10dp</item>
-    </style>
-    
-    <style name="LinearItem" >
-        <item name="android:layout_height">fill_parent</item>
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:paddingTop">12dp</item>
-        <item name="android:orientation">vertical</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:paddingBottom">15dp</item>
     </style>
     
     <style name="CheatCategory" parent="@android:style/TextAppearance.Small">
-        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">#6633b5e5</item>
-        <item name="android:padding">3dp</item>
-        <item name="android:textSize">13sp</item>
-        <item name="android:textColor">#000</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#36b8e8</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:gravity">center</item>
     </style>
     
     <style name="CheatItem" parent="@android:style/TextAppearance.Small">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">40dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:padding">3dp</item>
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">#000</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="Description" parent="@android:style/TextAppearance.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">#444</item>
     </style>
     
 <!-- sw250dp -->

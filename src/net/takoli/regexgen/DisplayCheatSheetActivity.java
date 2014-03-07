@@ -14,7 +14,7 @@ public class DisplayCheatSheetActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.cheat_sheet);
+		setContentView(R.layout.cheat_sheet_table);
 	}
 	
 	@Override
