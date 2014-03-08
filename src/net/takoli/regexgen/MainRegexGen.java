@@ -96,12 +96,12 @@ public class MainRegexGen extends FragmentActivity {
 		else
 			C = ".*";
 		if (nCnt.compareTo("") != 0)	// implement negative lookahead
-			Cn = "(?!.*" + nCnt + ")";
+			Cn = "(?!.*" + withEscapes(nCnt) + ")";
 		C = Cn + C;
 		
 		E = concatParts(withEscapes(ew1), withEscapes(ew2), withEscapes(ew3));
 		if (nEw.compareTo("") != 0)		// implement negative lookbehind
-			En = "(?<!" + nEw + ")";
+			En = "(?<!" + withEscapes(nEw) + ")";
 		E = E + En;
 		if (E.compareTo("") != 0)
 			E += "\\b";
