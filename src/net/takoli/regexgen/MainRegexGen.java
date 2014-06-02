@@ -87,8 +87,9 @@ public class MainRegexGen extends FragmentActivity {
 		S = C = Cn = E = En = "";
 		
 		if (sw.compareTo("") != 0 && sw.charAt(0) != '[' && sw.charAt(sw.length()-1) != ']')
-			sw = withEscapes(sw);
-		S = "\\b" + sw;
+			S = withEscapes(sw);
+		else S = sw;
+		S = "\\b" + S;
 		
 		C = concatParts(withEscapes(cnt1), withEscapes(cnt2), withEscapes(cnt3));
 		if (C.compareTo("") != 0)
