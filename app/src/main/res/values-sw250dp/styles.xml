@@ -24,7 +24,7 @@
 	    <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">#444</item>
-        <item name="android:background">@drawable/btn_check_label_background</item>
+        <!--<item name="android:background">@drawable/btn_check_label_background</item>-->
     </style>
     
     <style name="InputText" >

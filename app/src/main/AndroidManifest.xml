@@ -29,7 +29,7 @@
             android:parentActivityName="net.takoli.regexgen.MainRegexGen" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="net.takoli.regexgen.MainActivity" />
+                android:value="net.takoli.regexgen.MainRegexGen" />
         </activity>
     </application>
 
