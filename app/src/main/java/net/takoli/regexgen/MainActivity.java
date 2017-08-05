@@ -20,7 +20,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MainRegexGen extends FragmentActivity {
+public class MainActivity extends FragmentActivity {
 
 	static final String RT = "regextext";
 	SectionsPagerAdapter mSectionsPagerAdapter;
@@ -34,7 +34,7 @@ public class MainRegexGen extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.main);
+		setContentView(R.layout.main_activity);
 		this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
 		// Create the adapter that will return a fragment for the sections
@@ -70,7 +70,7 @@ public class MainRegexGen extends FragmentActivity {
 //	@Override
 //	// Menu about
 //	public boolean onCreateOptionsMenu(Menu menu) {
-//		getMenuInflater().inflate(R.menu.main, menu);
+//		getMenuInflater().inflate(R.menu.main_activity, menu);
 //		return true; }
 //    @Override
 //    public boolean onOptionsItemSelected(MenuItem item)
