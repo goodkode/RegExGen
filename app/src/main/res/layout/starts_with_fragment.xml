@@ -37,34 +37,44 @@
 			android:orientation="vertical">
 
 			<CheckBox
-				style="@style/CheckBoxText"
 				android:id="@+id/startsAnything"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 				android:text="@string/anything"
+                android:textSize="@dimen/fontSize"
 				android:checked="true"
 				android:onClick="onSWFCheckboxClicked" />
 
 			<CheckBox
-				style="@style/CheckBoxText"
 				android:id="@+id/upper_letter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 				android:text="@string/upper_letter"
+                android:textSize="@dimen/fontSize"
 				android:onClick="onSWFCheckboxClicked" />
 
 			<CheckBox
-				style="@style/CheckBoxText"
 				android:id="@+id/lower_letter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 				android:text="@string/lower_letter"
+                android:textSize="@dimen/fontSize"
 				android:onClick="onSWFCheckboxClicked" />
 
 			<CheckBox
-				style="@style/CheckBoxText"
 				android:id="@+id/number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 				android:text="@string/number"
+                android:textSize="@dimen/fontSize"
 				android:onClick="onSWFCheckboxClicked" />
 
 			<CheckBox
-				style="@style/CheckBoxText"
 				android:id="@+id/symbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 				android:text="@string/symbol"
+                android:textSize="@dimen/fontSize"
 				android:onClick="onSWFCheckboxClicked" />
 
 			<LinearLayout
@@ -72,14 +82,17 @@
 				android:layout_height="wrap_content">
 
 				<CheckBox
-					style="@style/CheckBoxText"
 					android:id="@+id/startsWithCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/fontSize"
 					android:onClick="onSWFCheckboxClicked" />
 
 				<EditText
 					style="@style/InputText"
 					android:id="@+id/startsWithText"
 					android:hint="@string/startsWithText"
+                    android:textSize="@dimen/fontSize"
 					android:onClick="regSWFlisteners" />
 
 			</LinearLayout>

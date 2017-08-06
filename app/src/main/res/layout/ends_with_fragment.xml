@@ -36,17 +36,21 @@
 			android:gravity="center_vertical">
 
 			<CheckBox
-				style="@style/CheckBoxText"
 				android:id="@+id/endsAnything"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 				android:text="@string/anything"
+                android:textSize="@dimen/fontSize"
 				android:checked="true"
 				android:onClick="onEWFCheckboxClicked" />
 
 			<CheckBox
-				style="@style/CheckBoxText"
 				android:id="@+id/endsText1CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 				android:layout_below="@id/endsAnything"
 				android:text="@string/empty"
+                android:textSize="@dimen/fontSize"
 				android:onClick="onEWFCheckboxClicked" />
 
 				<EditText
@@ -59,10 +63,12 @@
 					android:onClick="regEWFlisteners" />
 
 			<CheckBox
-				style="@style/CheckBoxText"
 				android:id="@+id/endsText2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 				android:layout_below="@id/endsText1CheckBox"
 				android:text="@string/OR"
+                android:textSize="@dimen/fontSize"
 				android:onClick="onEWFCheckboxClicked" />
 
 				<EditText
@@ -75,10 +81,12 @@
 					android:onClick="regEWFlisteners" />
 
 			<CheckBox
-				style="@style/CheckBoxText"
 				android:id="@+id/endsText3CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 				android:layout_below="@id/endsText2CheckBox"
 				android:text="@string/OR"
+                android:textSize="@dimen/fontSize"
 				android:onClick="onEWFCheckboxClicked" />
 
 				<EditText
@@ -92,11 +100,13 @@
 
 			<!-- doesnt end with -->
 			<CheckBox
-				style="@style/CheckBoxText"
 				android:id="@+id/notEndsTextCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 				android:layout_below="@id/endsText3CheckBox"
 				android:layout_marginTop="18dp"
 				android:text="@string/but"
+                android:textSize="@dimen/fontSize"
 				android:onClick="onEWFCheckboxClicked" />
 
 				<EditText

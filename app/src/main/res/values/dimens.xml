@@ -3,7 +3,7 @@
     <dimen name="margin">14dp</dimen>
     <dimen name="marginHalf">7dp</dimen>
 
-    <dimen name="fontSize">15sp</dimen>
+    <dimen name="fontSize">16sp</dimen>
     <dimen name="titleFontSize">18sp</dimen>
     <dimen name="sideFontSize">22sp</dimen>
 

@@ -36,17 +36,21 @@
             android:gravity="center_vertical" >
 
             <CheckBox
-                style="@style/CheckBoxText"
                 android:id="@+id/contAnything"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/anything"
+                android:textSize="@dimen/fontSize"
                 android:checked="true"
                 android:onClick="onCFCheckboxClicked" />
 
             <CheckBox
-                style="@style/CheckBoxText"
                 android:id="@+id/containsText1CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/contAnything"
                 android:text="@string/empty"
+                android:textSize="@dimen/fontSize"
                 android:onClick="onCFCheckboxClicked" />
 
                 <EditText
@@ -56,13 +60,16 @@
                     android:layout_alignBaseline="@id/containsText1CheckBox"
                     android:paddingBottom="5dp"
                     android:hint="@string/containsText"
+                    android:textSize="@dimen/fontSize"
                     android:onClick="regCFlisteners" />
 
             <CheckBox
-                style="@style/CheckBoxText"
                 android:id="@+id/containsText2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/containsText1CheckBox"
                 android:text="@string/OR"
+                android:textSize="@dimen/fontSize"
                 android:onClick="onCFCheckboxClicked" />
 
                 <EditText
@@ -72,13 +79,16 @@
                     android:layout_alignBaseline="@id/containsText2CheckBox"
                     android:paddingBottom="5dp"
                     android:hint="@string/containsText"
+                    android:textSize="@dimen/fontSize"
                     android:onClick="regCFlisteners"  />
 
             <CheckBox
-                style="@style/CheckBoxText"
                 android:id="@+id/containsText3CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/containsText2CheckBox"
                 android:text="@string/OR"
+                android:textSize="@dimen/fontSize"
                 android:onClick="onCFCheckboxClicked" />
 
                 <EditText
@@ -88,15 +98,18 @@
                     android:layout_alignBaseline="@id/containsText3CheckBox"
                     android:paddingBottom="5dp"
                     android:hint="@string/containsText"
+                    android:textSize="@dimen/fontSize"
                     android:onClick="regCFlisteners"  />
 
             <!-- doesnt contain -->
             <CheckBox
-                style="@style/CheckBoxText"
                 android:id="@+id/notContainsTextCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/containsText3CheckBox"
                 android:layout_marginTop="18dp"
                 android:text="@string/but"
+                android:textSize="@dimen/fontSize"
                 android:onClick="onCFCheckboxClicked" />
 
                 <EditText
@@ -106,6 +119,7 @@
                     android:layout_alignBaseline="@id/notContainsTextCheckBox"
                     android:paddingBottom="5dp"
                     android:hint="@string/notContainsText"
+                    android:textSize="@dimen/fontSize"
                     android:onClick="regCFlisteners"  />
 
         </RelativeLayout>
