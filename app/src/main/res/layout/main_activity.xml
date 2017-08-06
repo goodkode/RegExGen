@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
@@ -7,10 +8,10 @@
     tools:context=".DisplayCheatSheetActivity">
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
-        android:layout_width="wrap_content"
+        android:id="@+id/viewpager"
+        android:layout_weight="5"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4"
         android:background="#fff">
 
         <android.support.v4.view.PagerTitleStrip
@@ -25,13 +26,12 @@
 
     </android.support.v4.view.ViewPager>
 
-    <RelativeLayout
-        android:id="@+id/main_innerlayout"
+    <android.support.constraint.ConstraintLayout
+        android:layout_weight="4"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
         android:background="@color/appDarkBlue"
-        android:padding="15dp" >
+        android:padding="@dimen/margin" >
 
         <TextView
             android:id="@+id/regexLabel"
@@ -41,7 +41,11 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:text="@string/regexLabel"
-            android:textColor="#FFF" />
+            android:textColor="#FFF"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"/>
 
         <TextView
             android:id="@+id/regexText"
@@ -55,7 +59,11 @@
             android:text="@string/regexText"
             android:textColor="#666"
             android:textIsSelectable="true"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/regexLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" />
 
         <Button
             android:id="@+id/shareButton"
@@ -68,18 +76,25 @@
             android:drawableLeft="@drawable/ic_menu_share"
             android:onClick="onShareClick"
             android:text="@string/shareButton"
-            android:textColor="#FFF" />
+            android:textColor="#FFF"
+            app:layout_constraintTop_toBottomOf="@+id/regexText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" />
 
         <Button
             android:id="@+id/cheatSheet"
             style="@style/CheatButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_marginTop="100dp"
             android:background="@drawable/button_shape"
             android:onClick="showCheatSheet"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
             android:text="@string/regex_cheat_sheet"
-            android:textColor="#FFF" />
-    </RelativeLayout>
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>

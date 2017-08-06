@@ -1,114 +1,116 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:baselineAligned="false"
-    tools:context=".MainActivity" >
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".MainActivity">
 
-    <RelativeLayout
-	    android:layout_weight="1"
-	    android:layout_width="0dp"
-	    android:layout_height="match_parent">
-	    
-        <CheckBox
-        android:id="@+id/section_label"
-        android:layout_width="0dp"
-        android:layout_height="0dp" />
-	    
-	    <!-- TEXT on the side-->    
-		<TextView
-		    android:id="@+id/sideText3"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_centerInParent="true"
-		    android:singleLine="true"
-		    android:rotation="-90"
-			android:onClick="regEWFlisteners"
-		    android:textStyle="italic"
-			android:textSize="@dimen/sideFontSize"
-		    android:textColor="#36b8e8"
-			android:text="@string/title_section3" />
-		
-    </RelativeLayout>
-    
-    <RelativeLayout
-	    android:layout_weight="2"
-	    android:layout_width="0dp"
-	    android:layout_height="match_parent" >
-		
-        <CheckBox
-	        style="@style/CheckBoxText"
-	        android:id="@+id/endsAnything"
-	        android:text="@string/anything"
-	        android:checked="true"
-	        android:onClick="onEWFCheckboxClicked" />
-        
-        <CheckBox
-	        style="@style/CheckBoxText"
-	        android:id="@+id/endsText1CheckBox"
-			android:layout_below="@id/endsAnything"
-	        android:text="@string/empty"
-	        android:onClick="onEWFCheckboxClicked" />
-		
-	        <EditText
-	            style="@style/InputText"
-		        android:id="@+id/endsText1"
-		        android:layout_toRightOf="@id/endsText1CheckBox"
-		        android:layout_alignBaseline="@id/endsText1CheckBox"
-		        android:paddingBottom="5dp"
-		        android:hint="@string/endsText"
-		        android:onClick="regEWFlisteners" />
-        
-	    <CheckBox
-	        style="@style/CheckBoxText"
-	        android:id="@+id/endsText2CheckBox"
-			android:layout_below="@id/endsText1CheckBox"
-	        android:text="@string/OR"
-	        android:onClick="onEWFCheckboxClicked" />
-        
-	        <EditText
-	            style="@style/InputText"
-		        android:id="@+id/endsText2"
-		        android:layout_toRightOf="@id/endsText2CheckBox"
-		        android:layout_alignBaseline="@id/endsText2CheckBox"
-		        android:paddingBottom="5dp"
-		        android:hint="@string/endsText"
-		        android:onClick="regEWFlisteners" />
-	        
-	    <CheckBox
-	        style="@style/CheckBoxText"
-	        android:id="@+id/endsText3CheckBox"
-			android:layout_below="@id/endsText2CheckBox"
-	        android:text="@string/OR"
-	        android:onClick="onEWFCheckboxClicked" />
-        
-	        <EditText
-	            style="@style/InputText"
-		        android:id="@+id/endsText3"
-		        android:layout_toRightOf="@id/endsText3CheckBox"
-		        android:layout_alignBaseline="@id/endsText3CheckBox"
-		        android:paddingBottom="5dp"
-		        android:hint="@string/endsText"
-		        android:onClick="regEWFlisteners" />
-	    
-	    <!-- doesnt end with -->
-	    <CheckBox
-	        style="@style/CheckBoxText"
-	        android:id="@+id/notEndsTextCheckBox"
-			android:layout_below="@id/endsText3CheckBox"
-			android:layout_marginTop="18dp"
-	        android:text="@string/but"
-	        android:onClick="onEWFCheckboxClicked" />
-        
-	        <EditText
-	            style="@style/InputText"
-		        android:id="@+id/notEndsText"
-		        android:layout_toRightOf="@id/notEndsTextCheckBox"
-		        android:layout_alignBaseline="@id/notEndsTextCheckBox"
-		        android:paddingBottom="5dp"
-		        android:hint="@string/notEndsWithText"
-		        android:onClick="regEWFlisteners" />
-        
-    </RelativeLayout>
-	
-</LinearLayout>
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" >
+
+		<RelativeLayout
+			android:layout_weight="1"
+			android:layout_width="0dp"
+			android:layout_height="match_parent">
+
+			<TextView
+				android:id="@+id/sideText3"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:singleLine="true"
+				android:rotation="-90"
+				android:onClick="regEWFlisteners"
+				android:textStyle="italic"
+				android:textSize="@dimen/sideFontSize"
+				android:textColor="@color/appBlue"
+				android:text="@string/title_section3" />
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_weight="2"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+			android:gravity="center_vertical">
+
+			<CheckBox
+				style="@style/CheckBoxText"
+				android:id="@+id/endsAnything"
+				android:text="@string/anything"
+				android:checked="true"
+				android:onClick="onEWFCheckboxClicked" />
+
+			<CheckBox
+				style="@style/CheckBoxText"
+				android:id="@+id/endsText1CheckBox"
+				android:layout_below="@id/endsAnything"
+				android:text="@string/empty"
+				android:onClick="onEWFCheckboxClicked" />
+
+				<EditText
+					style="@style/InputText"
+					android:id="@+id/endsText1"
+					android:layout_toRightOf="@id/endsText1CheckBox"
+					android:layout_alignBaseline="@id/endsText1CheckBox"
+					android:paddingBottom="5dp"
+					android:hint="@string/endsText"
+					android:onClick="regEWFlisteners" />
+
+			<CheckBox
+				style="@style/CheckBoxText"
+				android:id="@+id/endsText2CheckBox"
+				android:layout_below="@id/endsText1CheckBox"
+				android:text="@string/OR"
+				android:onClick="onEWFCheckboxClicked" />
+
+				<EditText
+					style="@style/InputText"
+					android:id="@+id/endsText2"
+					android:layout_toRightOf="@id/endsText2CheckBox"
+					android:layout_alignBaseline="@id/endsText2CheckBox"
+					android:paddingBottom="5dp"
+					android:hint="@string/endsText"
+					android:onClick="regEWFlisteners" />
+
+			<CheckBox
+				style="@style/CheckBoxText"
+				android:id="@+id/endsText3CheckBox"
+				android:layout_below="@id/endsText2CheckBox"
+				android:text="@string/OR"
+				android:onClick="onEWFCheckboxClicked" />
+
+				<EditText
+					style="@style/InputText"
+					android:id="@+id/endsText3"
+					android:layout_toRightOf="@id/endsText3CheckBox"
+					android:layout_alignBaseline="@id/endsText3CheckBox"
+					android:paddingBottom="5dp"
+					android:hint="@string/endsText"
+					android:onClick="regEWFlisteners" />
+
+			<!-- doesnt end with -->
+			<CheckBox
+				style="@style/CheckBoxText"
+				android:id="@+id/notEndsTextCheckBox"
+				android:layout_below="@id/endsText3CheckBox"
+				android:layout_marginTop="18dp"
+				android:text="@string/but"
+				android:onClick="onEWFCheckboxClicked" />
+
+				<EditText
+					style="@style/InputText"
+					android:id="@+id/notEndsText"
+					android:layout_toRightOf="@id/notEndsTextCheckBox"
+					android:layout_alignBaseline="@id/notEndsTextCheckBox"
+					android:paddingBottom="5dp"
+					android:hint="@string/notEndsWithText"
+					android:onClick="regEWFlisteners" />
+
+		</RelativeLayout>
+
+	</LinearLayout>
+
+</FrameLayout>
+

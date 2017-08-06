@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
 	static final String RT = "regextext";
 	SectionsPagerAdapter mSectionsPagerAdapter;
-	ViewPager mViewPager; // will host the section contents
+	ViewPager viewPager; // will host the section contents
 	TextView regExText;
 	String sw;
 	String cnt1, cnt2, cnt3, nCnt;
@@ -37,12 +37,10 @@ public class MainActivity extends AppCompatActivity {
 		setContentView(R.layout.main_activity);
 		this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
-		// Create the adapter that will return a fragment for the sections
 		mSectionsPagerAdapter = new SectionsPagerAdapter(
 				getSupportFragmentManager());
-		// Set up the ViewPager with the sections adapter.
-		mViewPager = (ViewPager) findViewById(R.id.pager);
-		mViewPager.setAdapter(mSectionsPagerAdapter);
+		viewPager = findViewById(R.id.viewpager);
+		viewPager.setAdapter(mSectionsPagerAdapter);
 		sw = "";
 		cnt1 = cnt2 = cnt3 = nCnt = "";
 		ew1 = ew2 = ew3 = nEw = "";		
@@ -64,22 +62,9 @@ public class MainActivity extends AppCompatActivity {
 					LinearLayout.LayoutParams.WRAP_CONTENT);
 			p.height = 0;
 			p.weight = 6;
-			mViewPager.setLayoutParams(p);
+			viewPager.setLayoutParams(p);
 		}
 	}
-//	@Override
-//	// Menu about
-//	public boolean onCreateOptionsMenu(Menu menu) {
-//		getMenuInflater().inflate(R.menu.main_activity, menu);
-//		return true; }
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item)
-//    {
-//		Log.i("about", "pressed");
-//		DialogFragment about = new AboutDialogFragment();
-//		about.show(getFragmentManager(), "test");
-//		return true;
-//    }
 
 	// this creates the REGEX
 	public void createRegex() {

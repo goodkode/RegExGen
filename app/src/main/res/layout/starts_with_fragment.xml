@@ -1,110 +1,100 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:baselineAligned="false"
-    tools:context=".MainActivity" >
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".MainActivity">
 
-	<RelativeLayout
-	    android:layout_weight="1"
-	    android:layout_width="0dp"
-	    android:layout_height="match_parent" >
-	    
-	    <!-- TEXT on the side rotated -->
-		<TextView
-	        android:id="@+id/sideText1"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_centerInParent="true"
-	        android:rotation="-90"
-			android:onClick="regSWFlisteners"
-	        android:textStyle="italic"
-			android:textSize="@dimen/sideFontSize"
-	        android:textColor="@color/appBlue"
-			android:text="@string/title_section1" />
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" >
 
-    </RelativeLayout>
+		<RelativeLayout
+			android:layout_weight="1"
+			android:layout_width="0dp"
+			android:layout_height="match_parent" >
 
-	<RelativeLayout
-	    android:layout_weight="2"
-	    android:layout_width="0dp"
-	    android:layout_height="match_parent" >
-	
-	    <CheckBox
-	        style="@style/CheckBoxText"
-	        android:id="@+id/startsAnything"
-	        android:text="@string/anything"
-	        android:checked="true"
-	        android:onClick="onSWFCheckboxClicked" />
-
-	    <CheckBox
-	        style="@style/CheckBoxText"
-	        android:id="@+id/upper_letter"
-	        android:layout_alignLeft="@id/startsAnything"
-	        android:layout_below="@id/startsAnything"
-	        android:text="@string/upper_letter"
-	        android:onClick="onSWFCheckboxClicked" />
-
-	    <CheckBox
-	        style="@style/CheckBoxText"
-	        android:id="@+id/lower_letter"
-	        android:layout_alignLeft="@id/upper_letter"
-	        android:layout_below="@id/upper_letter"
-	        android:text="@string/lower_letter"
-	        android:onClick="onSWFCheckboxClicked" />
-
-	    <CheckBox
-	        style="@style/CheckBoxText"
-	        android:id="@+id/number"
-	        android:layout_alignLeft="@+id/lower_letter"
-	        android:layout_below="@+id/lower_letter"
-	        android:text="@string/number"
-	        android:onClick="onSWFCheckboxClicked" />
-
-	    <CheckBox
-	        style="@style/CheckBoxText"
-	        android:id="@+id/symbol"
-	        android:layout_alignLeft="@+id/number"
-	        android:layout_below="@+id/number"
-	        android:text="@string/symbol"
-	        android:onClick="onSWFCheckboxClicked" />
-
-	    <CheckBox
-	        style="@style/CheckBoxText"
-	        android:id="@+id/startsWithCheckBox"
-	        android:layout_alignLeft="@+id/symbol"
-	        android:layout_below="@+id/symbol"
-	        android:onClick="onSWFCheckboxClicked" />
-
-		    <EditText
-		        style="@style/InputText"
-		        android:id="@+id/startsWithText"
-		        android:layout_toRightOf="@id/startsWithCheckBox"
-		        android:layout_alignBaseline="@id/startsWithCheckBox"
-		        android:paddingBottom="5dp"
-		        android:hint="@string/startsWithText"
-		        android:onClick="regSWFlisteners" />
-
-		<!-- swipe -->
-		<LinearLayout
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:layout_alignParentBottom="true"	>
-		    <TextView
-		        android:id="@+id/swipe1"
-		        android:layout_width="0dp"
-		        android:layout_height="26dp"
-		        android:layout_weight="1"
-		        android:gravity="center"
-		        android:text="@string/swipe"
-		        android:textSize="13sp"
-		        android:textStyle="italic"
-		        android:textColor="@color/appBlue" />
 			<TextView
-			    android:layout_width="0dp"
-			    android:layout_height="20dp"
-			    android:layout_weight="1" />
-		</LinearLayout>
-	</RelativeLayout>
+				android:id="@+id/sideText1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+                android:singleLine="true"
+				android:rotation="-90"
+				android:onClick="regSWFlisteners"
+				android:textStyle="italic"
+				android:textSize="@dimen/sideFontSize"
+				android:textColor="@color/appBlue"
+				android:text="@string/title_section1" />
 
-</LinearLayout>
+		</RelativeLayout>
+
+		<LinearLayout
+			android:layout_weight="2"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:gravity="center_vertical"
+			android:layout_marginBottom="30dp"
+			android:orientation="vertical">
+
+			<CheckBox
+				style="@style/CheckBoxText"
+				android:id="@+id/startsAnything"
+				android:text="@string/anything"
+				android:checked="true"
+				android:onClick="onSWFCheckboxClicked" />
+
+			<CheckBox
+				style="@style/CheckBoxText"
+				android:id="@+id/upper_letter"
+				android:text="@string/upper_letter"
+				android:onClick="onSWFCheckboxClicked" />
+
+			<CheckBox
+				style="@style/CheckBoxText"
+				android:id="@+id/lower_letter"
+				android:text="@string/lower_letter"
+				android:onClick="onSWFCheckboxClicked" />
+
+			<CheckBox
+				style="@style/CheckBoxText"
+				android:id="@+id/number"
+				android:text="@string/number"
+				android:onClick="onSWFCheckboxClicked" />
+
+			<CheckBox
+				style="@style/CheckBoxText"
+				android:id="@+id/symbol"
+				android:text="@string/symbol"
+				android:onClick="onSWFCheckboxClicked" />
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+
+				<CheckBox
+					style="@style/CheckBoxText"
+					android:id="@+id/startsWithCheckBox"
+					android:onClick="onSWFCheckboxClicked" />
+
+				<EditText
+					style="@style/InputText"
+					android:id="@+id/startsWithText"
+					android:hint="@string/startsWithText"
+					android:onClick="regSWFlisteners" />
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="26dp"
+		android:layout_gravity="center_horizontal|bottom"
+		android:text="@string/swipe"
+		android:textSize="13sp"
+		android:textStyle="italic"
+		android:textColor="@color/appBlue"/>
+
+</FrameLayout>
