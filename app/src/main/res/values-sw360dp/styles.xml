@@ -1,23 +1,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 <!-- sw360dp -->
-	<style name="ScreenLoaded" parent="android:Widget.Holo.Light.TextView">
-        <item name="android:text">sw360dp</item>
-    </style>
-
-    <!-- FRAGEMENT 20/6/6 25 17 17-->
-    <style name="TitleStrip" >
-        <item name="android:textSize">20sp</item>
-        <item name="android:paddingBottom">6dp</item>
-        <item name="android:paddingTop">6dp</item>
-    </style>
-    
-    <style name="SideText" >
-        <item name="android:textSize">25sp</item>
-    </style>
-    
-    <style name="SelectorLayout" >
-        <item name="android:layout_marginTop">15dp</item>
-    </style>
     
     <style name="CheckBoxText" >
         <item name="android:layout_width">wrap_content</item>

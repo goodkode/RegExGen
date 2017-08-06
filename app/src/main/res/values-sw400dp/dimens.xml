@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin">16dp</dimen>
+    <dimen name="marginHalf">8dp</dimen>
+
+    <dimen name="fontSize">17sp</dimen>
+    <dimen name="titleFontSize">20sp</dimen>
+    <dimen name="sideFontSize">24sp</dimen>
+
+</resources>

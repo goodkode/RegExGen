@@ -17,22 +17,21 @@
 	    
 	    <!-- TEXT on the side-->    
 		<TextView
-		    style="@style/SideText"
 		    android:id="@+id/sideText3"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:layout_centerInParent="true"
 		    android:singleLine="true"
 		    android:rotation="-90"
-		    android:text="@string/title_section3"
+			android:onClick="regEWFlisteners"
 		    android:textStyle="italic"
+			android:textSize="@dimen/sideFontSize"
 		    android:textColor="#36b8e8"
-		    android:onClick="regEWFlisteners" />
+			android:text="@string/title_section3" />
 		
     </RelativeLayout>
     
     <RelativeLayout
-        style="@style/SelectorLayout"
 	    android:layout_weight="2"
 	    android:layout_width="0dp"
 	    android:layout_height="match_parent" >
