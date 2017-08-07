@@ -1,25 +1,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 <!-- sw500dp -->
-
-    
-    <!-- MAIN 18 22/260/6 15/6/6/10 18-->
-    <style name="RegexLabel" >
-        <item name="android:textSize">24sp</item>
-    </style>
-    <style name="RegexText" >
-        <item name="android:textSize">30sp</item>
-        <item name="android:layout_width">320dp</item>
-        <item name="android:layout_margin">8dp</item>
-        </style>
-    <style name="ShareRegex" >
-        <item name="android:textSize">22sp</item>
-        <item name="android:paddingLeft">20sp</item>
-        <item name="android:paddingRight">20sp</item>
-        <item name="android:layout_marginTop">10dp</item>
-    </style>
-    <style name="CheatButton" >
-        <item name="android:textSize">20sp</item>
-    </style>
     
     <!-- CHEATSHEET sw500dp -->
     <style name="TableStyle" >

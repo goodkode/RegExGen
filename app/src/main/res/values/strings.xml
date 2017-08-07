@@ -24,7 +24,7 @@
     <string name="regexLabel">Regular Expression:</string>
     <string name="regexText">.*</string>
     <string name="regex_cheat_sheet">Show me the cheat sheet</string>
-    <string name="shareButton">Share this</string>
+    <string name="shareButton">\u0020\u0020Share this</string>
     <string name="share_regex_to">Share regex to</string>
     <string name="about_message">The app\'s philosophy is to help with hard to memorize regular expression rules. It provides a graphical tool to make the generation just a bit easier. I hope you make good use of it!\n\nPlease feel free to email me (Google Play), any feedback is much appreciated!\n\nThanks!\n\ntakoli</string>
     <string name="got_it">Cool</string>

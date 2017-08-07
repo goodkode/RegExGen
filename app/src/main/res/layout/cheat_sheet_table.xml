@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
+		android:padding="@dimen/margin"
         android:background="@color/appBlue"
 		android:gravity="center"
 		android:textColor="#ffff"
@@ -18,16 +19,16 @@
     </TextView>
     
     <Button
-        style="@style/CheatButton"
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
     	android:layout_margin="15dp"
-        android:text="@string/back_to_gen"
+		android:textAllCaps="false"
+		android:textSize="@dimen/titleFontSize"
         android:textColor="#FFF"
-        android:onClick="backToMain"
-        android:background="@drawable/button_shape" />
+		android:text="@string/back_to_gen"
+        android:onClick="backToMain"/>
     
     <ScrollView
         android:id="@+id/rules_scroll"
