@@ -54,12 +54,17 @@
 				android:onClick="onEWFCheckboxClicked" />
 
 				<EditText
-					style="@style/InputText"
 					android:id="@+id/endsText1"
 					android:layout_toRightOf="@id/endsText1CheckBox"
 					android:layout_alignBaseline="@id/endsText1CheckBox"
-					android:paddingBottom="5dp"
-					android:hint="@string/endsText"
+                    android:layout_width="@dimen/editTextWidth"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="6dp"
+                    android:inputType="textNoSuggestions"
+                    android:textSize="@dimen/fontSize"
+                    android:textStyle="italic"
+                    android:textColor="@color/inputColor"
+                    android:hint="@string/endsText"
 					android:onClick="regEWFlisteners" />
 
 			<CheckBox
@@ -67,16 +72,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 				android:layout_below="@id/endsText1CheckBox"
-				android:text="@string/OR"
                 android:textSize="@dimen/fontSize"
+				android:text="@string/OR"
 				android:onClick="onEWFCheckboxClicked" />
 
 				<EditText
-					style="@style/InputText"
 					android:id="@+id/endsText2"
 					android:layout_toRightOf="@id/endsText2CheckBox"
 					android:layout_alignBaseline="@id/endsText2CheckBox"
-					android:paddingBottom="5dp"
+                    android:layout_width="@dimen/editTextWidth"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="6dp"
+                    android:inputType="textNoSuggestions"
+                    android:textSize="@dimen/fontSize"
+                    android:textStyle="italic"
+                    android:textColor="@color/inputColor"
 					android:hint="@string/endsText"
 					android:onClick="regEWFlisteners" />
 
@@ -90,11 +100,16 @@
 				android:onClick="onEWFCheckboxClicked" />
 
 				<EditText
-					style="@style/InputText"
 					android:id="@+id/endsText3"
 					android:layout_toRightOf="@id/endsText3CheckBox"
 					android:layout_alignBaseline="@id/endsText3CheckBox"
-					android:paddingBottom="5dp"
+                    android:layout_width="@dimen/editTextWidth"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="6dp"
+                    android:inputType="textNoSuggestions"
+                    android:textSize="@dimen/fontSize"
+                    android:textStyle="italic"
+                    android:textColor="@color/inputColor"
 					android:hint="@string/endsText"
 					android:onClick="regEWFlisteners" />
 
@@ -110,11 +125,16 @@
 				android:onClick="onEWFCheckboxClicked" />
 
 				<EditText
-					style="@style/InputText"
 					android:id="@+id/notEndsText"
 					android:layout_toRightOf="@id/notEndsTextCheckBox"
 					android:layout_alignBaseline="@id/notEndsTextCheckBox"
-					android:paddingBottom="5dp"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="6dp"
+                    android:inputType="textNoSuggestions"
+                    android:textSize="@dimen/fontSize"
+                    android:textStyle="italic"
+                    android:textColor="@color/inputColor"
 					android:hint="@string/notEndsWithText"
 					android:onClick="regEWFlisteners" />
 

@@ -4,7 +4,10 @@
     <dimen name="marginHalf">7dp</dimen>
 
     <dimen name="fontSize">16sp</dimen>
+    <dimen name="hintFontSize">15sp</dimen>
     <dimen name="titleFontSize">18sp</dimen>
     <dimen name="sideFontSize">22sp</dimen>
+
+    <dimen name="editTextWidth">125dp</dimen>
 
 </resources>

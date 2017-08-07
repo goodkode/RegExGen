@@ -89,11 +89,16 @@
 					android:onClick="onSWFCheckboxClicked" />
 
 				<EditText
-					style="@style/InputText"
 					android:id="@+id/startsWithText"
-					android:hint="@string/startsWithText"
-                    android:textSize="@dimen/fontSize"
-					android:onClick="regSWFlisteners" />
+                    android:layout_width="@dimen/editTextWidth"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="6dp"
+                    android:inputType="textNoSuggestions"
+                    android:textSize="@dimen/hintFontSize"
+                    android:textStyle="italic"
+                    android:textColor="@color/inputColor"
+                    android:hint="@string/startsWithText"
+					android:onClick="regSWFlisteners"/>
 
 			</LinearLayout>
 

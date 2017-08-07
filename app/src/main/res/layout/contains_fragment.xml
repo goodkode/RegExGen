@@ -54,13 +54,17 @@
                 android:onClick="onCFCheckboxClicked" />
 
                 <EditText
-                    style="@style/InputText"
                     android:id="@+id/containsText1"
                     android:layout_toRightOf="@id/containsText1CheckBox"
                     android:layout_alignBaseline="@id/containsText1CheckBox"
-                    android:paddingBottom="5dp"
+                    android:layout_width="@dimen/editTextWidth"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="6dp"
+                    android:inputType="textNoSuggestions"
+                    android:textSize="@dimen/hintFontSize"
+                    android:textStyle="italic"
+                    android:textColor="@color/inputColor"
                     android:hint="@string/containsText"
-                    android:textSize="@dimen/fontSize"
                     android:onClick="regCFlisteners" />
 
             <CheckBox
@@ -73,13 +77,17 @@
                 android:onClick="onCFCheckboxClicked" />
 
                 <EditText
-                    style="@style/InputText"
                     android:id="@+id/containsText2"
                     android:layout_toRightOf="@id/containsText2CheckBox"
                     android:layout_alignBaseline="@id/containsText2CheckBox"
-                    android:paddingBottom="5dp"
+                    android:layout_width="@dimen/editTextWidth"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="6dp"
+                    android:inputType="textNoSuggestions"
+                    android:textSize="@dimen/hintFontSize"
+                    android:textStyle="italic"
+                    android:textColor="@color/inputColor"
                     android:hint="@string/containsText"
-                    android:textSize="@dimen/fontSize"
                     android:onClick="regCFlisteners"  />
 
             <CheckBox
@@ -92,13 +100,17 @@
                 android:onClick="onCFCheckboxClicked" />
 
                 <EditText
-                    style="@style/InputText"
                     android:id="@+id/containsText3"
                     android:layout_toRightOf="@id/containsText3CheckBox"
                     android:layout_alignBaseline="@id/containsText3CheckBox"
-                    android:paddingBottom="5dp"
+                    android:layout_width="@dimen/editTextWidth"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="6dp"
+                    android:inputType="textNoSuggestions"
+                    android:textSize="@dimen/hintFontSize"
+                    android:textStyle="italic"
+                    android:textColor="@color/inputColor"
                     android:hint="@string/containsText"
-                    android:textSize="@dimen/fontSize"
                     android:onClick="regCFlisteners"  />
 
             <!-- doesnt contain -->
@@ -113,13 +125,17 @@
                 android:onClick="onCFCheckboxClicked" />
 
                 <EditText
-                    style="@style/InputText"
                     android:id="@+id/notContainsText"
                     android:layout_toRightOf="@id/notContainsTextCheckBox"
                     android:layout_alignBaseline="@id/notContainsTextCheckBox"
-                    android:paddingBottom="5dp"
+                    android:layout_width="@dimen/editTextWidth"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="6dp"
+                    android:inputType="textNoSuggestions"
+                    android:textSize="@dimen/hintFontSize"
+                    android:textStyle="italic"
+                    android:textColor="@color/inputColor"
                     android:hint="@string/notContainsText"
-                    android:textSize="@dimen/fontSize"
                     android:onClick="regCFlisteners"  />
 
         </RelativeLayout>
