@@ -3,176 +3,492 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3333b5e5"
-    tools:context=".DisplayCheatSheetActivity" >
-    
+    tools:context=".DisplayCheatSheetActivity">
+
     <TextView
         android:id="@+id/cheat_sheet_title_strip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-		android:padding="@dimen/margin"
         android:background="@color/appBlue"
-		android:gravity="center"
-		android:textColor="#ffff"
-		android:textSize="@dimen/titleFontSize"
-		android:text="@string/cheat_sheet_title">
-    </TextView>
-    
+        android:gravity="center"
+        android:padding="@dimen/margin"
+        android:text="@string/cheat_sheet_title"
+        android:textColor="#ffff"
+        android:textSize="@dimen/titleFontSize" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-    	android:layout_margin="15dp"
-		android:textAllCaps="false"
-		android:textSize="@dimen/titleFontSize"
+        android:layout_margin="15dp"
+        android:onClick="backToMain"
+        android:text="@string/back_to_gen"
+        android:textAllCaps="false"
         android:textColor="#FFF"
-		android:text="@string/back_to_gen"
-        android:onClick="backToMain"/>
-    
+        android:textSize="@dimen/titleFontSize" />
+
     <ScrollView
         android:id="@+id/rules_scroll"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_below="@id/cheat_sheet_title_strip"
-        android:layout_above="@id/button" >
-	    <LinearLayout
-        android:id="@+id/rules_parent"
-        android:orientation="horizontal"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:padding="5dp"
-        android:baselineAligned="false"
-        tools:ignore="HardcodedText" >
-	        <LinearLayout 
-	            android:layout_width="0dp"
-			    android:layout_weight="1"
-            	android:layout_height="wrap_content"
-            	android:orientation="vertical"
-            	android:padding="5dp" >
-            	
-	            
-	            <TableLayout  style="@style/TableStyle" >
-		        	<TextView style="@style/CheatCategory" android:text="Quantifiers" />
-	            
-		            <TableRow><TextView style="@style/CheatItem" android:text="." />
-		                	<TextView style="@style/Description" android:text="Any character" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="*" />
-		                	<TextView style="@style/Description" android:text="Zero or more" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="+" />
-		                	<TextView style="@style/Description" android:text="One or more" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="\?" />
-		                	<TextView style="@style/Description" android:text="Zero or one" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="{n}" />
-		                	<TextView style="@style/Description" android:text="n times" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="{n,}" />
-		                	<TextView style="@style/Description" android:text="n or more" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="{n,m}" />
-		                	<TextView style="@style/Description" android:text="n to m times" /></TableRow>
-	            </TableLayout>
+        android:layout_above="@id/button"
+        android:layout_below="@id/cheat_sheet_title_strip">
 
-	            <TableLayout style="@style/TableStyle" >
-	          		<TextView style="@style/CheatCategory" android:text="Character Classes" />
-	            
-	          		<TableRow><TextView style="@style/CheatItem" android:text="\\d" />
-		                	<TextView style="@style/Description" android:text="Digit" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="\\D" />
-		                	<TextView style="@style/Description" android:text="Not digit" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="\\w" />
-		                	<TextView style="@style/Description" android:text="Word" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="\\W" />
-		                	<TextView style="@style/Description" android:text="Not word" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="\\s" />
-		                	<TextView style="@style/Description" android:text="Whitespace" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="\\S" />
-		                	<TextView style="@style/Description" android:text="Non-whitespace" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="\\c" />
-		                	<TextView style="@style/Description" android:text="Control char" /></TableRow>
-            	    </TableLayout>
-	              	
-	            
-	            <TableLayout  style="@style/TableStyle" >
-		        	<TextView style="@style/CheatCategory" android:text="Anchors" />
-	            
-		            <TableRow><TextView style="@style/CheatItem" android:text="^" />
-		                	<TextView style="@style/Description" android:text="Start of line/string" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="$" />
-		                	<TextView style="@style/Description" android:text="End of line/string" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="\\A" />
-		                	<TextView style="@style/Description" android:text="Start of string only" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="\\Z" />
-		                	<TextView style="@style/Description" android:text="End of string only" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="\\b" />
-		                	<TextView style="@style/Description" android:text="Word boundary" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="\\B" />
-		                	<TextView style="@style/Description" android:text="Non-word boundary" /></TableRow>
-				</TableLayout>
-		        
-	    </LinearLayout> 
-			
-	        
-	    <LinearLayout 
-	        android:layout_width="0dp"
-	        android:layout_weight="1"
-           	android:layout_height="wrap_content" 
-           	android:orientation="vertical"
-			android:padding="5dp" >
-	            
-	        <TableLayout  style="@style/TableStyle" >
-	            <TextView style="@style/CheatCategory" android:text="Metacharacters escaped with '\\'" />
-	            
-		        <TextView style="@style/CheatItem" android:layout_width="wrap_content"  android:gravity="center"  android:textStyle="normal"
-		               android:text="&lt;&#160;(&#160;[&#160;{&#160;\\&#160;^&#160;-&#160;=&#160;$&#160;!&#160;\n|&#160;]&#160;}&#160;)&#160;\?&#160;*&#160;+&#160;.&#160;&gt;" />
-		    </TableLayout>
-			    
-		    <TableLayout  style="@style/TableStyle" >
-			    <TextView style="@style/CheatCategory" android:text="Groups and Ranges" />
-	            
-		            <TableRow><TextView style="@style/CheatItem" android:text="[abc]" />
-		                	<TextView style="@style/Description" android:text="Range (a, b or c)" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="[^abc]" />
-		                	<TextView style="@style/Description" android:text="Not a, b, or c" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="[a-f]" />
-		                	<TextView style="@style/Description" android:text="Any char a thru f" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="[1-5]" />
-		                	<TextView style="@style/Description" android:text="Any digit 1 thru 5" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="(...)" />
-		                	<TextView style="@style/Description" android:text="Logical group" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="(x|y)" />
-		                	<TextView style="@style/Description" android:text="Char x or y" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="\?!" />
-		                	<TextView style="@style/Description" android:text="Negative lookahead" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem" android:text="\?&lt;!" />
-		                	<TextView style="@style/Description" android:text="Negative lookbehind" /></TableRow>
-            	</TableLayout>
-            	
-	            
-	            <TableLayout  style="@style/TableStyle" >
-	                <TextView style="@style/CheatCategory" android:text="Special groups and characters" />
-	            
-		            <TableRow><TextView style="@style/CheatItem2" android:text="[:upper:]" />
-		                	<TextView style="@style/Description" android:text="Uppercase" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem2" android:text="[:lower:]" />
-		                	<TextView style="@style/Description" android:text="Lowercase" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem2" android:text="[:alpha:]" />
-		                	<TextView style="@style/Description" android:text="Any letter" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem2" android:text="[:digit:]" />
-		                	<TextView style="@style/Description" android:text="Number" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem2" android:text="[:alphanum:]" />
-		                	<TextView style="@style/Description" android:text="Letter or num" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem2" android:text="[:space:]" />
-		                	<TextView style="@style/Description" android:text="Blank char" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem2" android:text="[:graph:]" />
-		                	<TextView style="@style/Description" android:text="Printed char" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem2" android:text="[:word:]" />
-		                	<TextView style="@style/Description" android:text="Letter, _, digit" /></TableRow>
-		            <TableRow><TextView style="@style/CheatItem2" android:text="[:cntrl:]" />
-		                	<TextView style="@style/Description" android:text="Control char" /></TableRow>
-	          	</TableLayout>	    
-		            
-			</LinearLayout>
-			
-	</LinearLayout>
+        <LinearLayout
+            android:id="@+id/rules_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            tools:ignore="HardcodedText">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TableLayout style="@style/TableStyle">
+
+                    <TextView
+                        style="@style/CheatCategory"
+                        android:text="Quantifiers" />
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="." />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Any character" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="*" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Zero or more" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="+" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="One or more" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="\?" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Zero or one" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="{n}" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="n times" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="{n,}" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="n or more" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="{n,m}" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="n to m times" />
+                    </TableRow>
+
+                </TableLayout>
+
+                <TableLayout style="@style/TableStyle">
+
+                    <TextView
+                        style="@style/CheatCategory"
+                        android:text="Character Classes" />
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="\\d" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Digit" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="\\D" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Not digit" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="\\w" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Word" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="\\W" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Not word" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="\\s" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Whitespace" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="\\S" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Non-whitespace" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="\\c" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Control char" />
+                    </TableRow>
+
+                </TableLayout>
+
+                <TableLayout style="@style/TableStyle">
+
+                    <TextView
+                        style="@style/CheatCategory"
+                        android:text="Anchors" />
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="^" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Start of line/string" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="$" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="End of line/string" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="\\A" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Start of string only" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="\\Z" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="End of string only" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="\\b" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Word boundary" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="\\B" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Non-word boundary" />
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TableLayout style="@style/TableStyle">
+
+                    <TextView
+                        style="@style/CheatCategory"
+                        android:text="Metacharacters escaped with '\\'" />
+
+                    <TextView
+                        style="@style/CheatItem"
+                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:text="&lt;&#160;(&#160;[&#160;{&#160;\\&#160;^&#160;-&#160;=&#160;$&#160;!&#160;\n|&#160;]&#160;}&#160;)&#160;\?&#160;*&#160;+&#160;.&#160;&gt;"
+                        android:textStyle="normal" />
+                </TableLayout>
+
+                <TableLayout style="@style/TableStyle">
+
+                    <TextView
+                        style="@style/CheatCategory"
+                        android:text="Groups and Ranges" />
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="[abc]" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Range (a, b or c)" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="[^abc]" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Not a, b, or c" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="[a-f]" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Any char a thru f" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="[1-5]" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Any digit 1 thru 5" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="(...)" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Logical group" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="(x|y)" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Char x or y" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="\?!" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Negative lookahead" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem"
+                            android:text="\?&lt;!" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Negative lookbehind" />
+                    </TableRow>
+
+                </TableLayout>
+
+                <TableLayout style="@style/TableStyle">
+
+                    <TextView
+                        style="@style/CheatCategory"
+                        android:text="Special groups and characters" />
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem2"
+                            android:text="[:upper:]" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Uppercase" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem2"
+                            android:text="[:lower:]" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Lowercase" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem2"
+                            android:text="[:alpha:]" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Any letter" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem2"
+                            android:text="[:digit:]" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Number" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem2"
+                            android:text="[:alphanum:]" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Letter or num" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem2"
+                            android:text="[:space:]" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Blank char" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem2"
+                            android:text="[:graph:]" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Printed char" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem2"
+                            android:text="[:word:]" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Letter, _, digit" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            style="@style/CheatItem2"
+                            android:text="[:cntrl:]" />
+
+                        <TextView
+                            style="@style/Description"
+                            android:text="Control char" />
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
     </ScrollView>
 
 </RelativeLayout>
