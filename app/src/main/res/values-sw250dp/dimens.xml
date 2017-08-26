@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin">12dp</dimen>
+    <dimen name="marginHalf">6dp</dimen>
+
+    <dimen name="viewPagerHeight">260dp</dimen>
+
+    <dimen name="fontSize">14sp</dimen>
+    <dimen name="hintFontSize">13sp</dimen>
+    <dimen name="titleFontSize">16sp</dimen>
+    <dimen name="sideFontSize">20sp</dimen>
+
+    <dimen name="editTextWidth">100dp</dimen>
+
+</resources>

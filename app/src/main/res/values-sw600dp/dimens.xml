@@ -4,6 +4,8 @@
     <dimen name="margin">20dp</dimen>
     <dimen name="marginHalf">10dp</dimen>
 
+    <dimen name="viewPagerHeight">420dp</dimen>
+
     <dimen name="fontSize">19sp</dimen>
     <dimen name="hintFontSize">18sp</dimen>
     <dimen name="titleFontSize">22sp</dimen>

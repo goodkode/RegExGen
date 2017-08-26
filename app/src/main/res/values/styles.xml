@@ -13,5 +13,6 @@
     <color name="appBlue">#0288d1</color>
     <color name="appLightBlue">#90caf9</color>
     <color name="inputColor">#555555</color>
+    <color name="light">#E8E8E8</color>
 
 </resources>

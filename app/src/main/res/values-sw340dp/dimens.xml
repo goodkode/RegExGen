@@ -4,7 +4,7 @@
     <dimen name="margin">14dp</dimen>
     <dimen name="marginHalf">7dp</dimen>
 
-    <dimen name="viewPagerHeight">350dp</dimen>
+    <dimen name="viewPagerHeight">300dp</dimen>
 
     <dimen name="fontSize">16sp</dimen>
     <dimen name="hintFontSize">15sp</dimen>

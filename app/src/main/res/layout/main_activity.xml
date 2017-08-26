@@ -9,9 +9,8 @@
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
-        android:layout_weight="5"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/viewPagerHeight"
         android:background="#fff">
 
         <android.support.v4.view.PagerTitleStrip
@@ -26,10 +25,43 @@
 
     </android.support.v4.view.ViewPager>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/light">
+
+        <RadioGroup
+            android:checkedButton="@+id/matchOnWordsRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/matchOnWordsRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/marginHalf"
+                android:shadowColor="@android:color/white"
+                android:textSize="@dimen/hintFontSize"
+                android:text="match on words"/>
+
+            <RadioButton
+                android:id="@+id/matchOnLinesRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/hintFontSize"
+                android:text="match on lines"/>
+
+        </RadioGroup>
+
+    </FrameLayout>
+
     <android.support.constraint.ConstraintLayout
-        android:layout_weight="4"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="@color/appLightBlue"
         android:padding="@dimen/margin" >
 
