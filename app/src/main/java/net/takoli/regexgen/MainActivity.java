@@ -9,7 +9,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,13 +16,10 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-	SectionsPagerAdapter mSectionsPagerAdapter;
-	ViewPager viewPager; // will host the section contents
 	TextView regExText;
 	String sw;
 	String cnt1, cnt2, cnt3, nCnt;
@@ -37,39 +33,17 @@ public class MainActivity extends AppCompatActivity {
 		setContentView(R.layout.main_activity);
 		this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
-		mSectionsPagerAdapter = new SectionsPagerAdapter(
-				getSupportFragmentManager());
-		viewPager = findViewById(R.id.viewpager);
-		viewPager.setAdapter(mSectionsPagerAdapter);
+		ViewPager viewPager = findViewById(R.id.viewpager);
+		viewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
 		sw = "";
 		cnt1 = cnt2 = cnt3 = nCnt = "";
 		ew1 = ew2 = ew3 = nEw = "";
 		startDelimiter = "\\b";
 		endDelimiter = "\\b";
 		createRegex();
-		
-		//DIAGNOSTICS
-		DisplayMetrics dm = getResources().getDisplayMetrics();
-		float dpi = dm.density;
-//		int width = dm.widthPixels;
-		int height = dm.heightPixels;
-//		int dpi_width = (int) (width / dpi);
-//		TextView tvDiag = (TextView) findViewById(R.id.screen_diag);
-//		tvDiag.setText(width + "/" + height + " ("+dpi+")::" + dpi_width);
-		
-		//Update layout weights for short screen
-		if ((int) (height / dpi) < 600) {
-			LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(
-					LinearLayout.LayoutParams.WRAP_CONTENT, 
-					LinearLayout.LayoutParams.WRAP_CONTENT);
-			p.height = 0;
-			p.weight = 6;
-			viewPager.setLayoutParams(p);
-		}
 	}
 
-	// this creates the REGEX
-	public void createRegex() {
+	private void createRegex() {
 		String S, C, Cn, E, En;
 		S = C = Cn = E = En = "";
 		
@@ -153,7 +127,6 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	public void showCheatSheet(View view) {
-		//Log.i("Cheat Sheet", "time to show it");
 		Intent intent = new Intent(this, DisplayCheatSheetActivity.class);
 		startActivityForResult(intent, RESULT_OK);
 		overridePendingTransition(R.anim.cheat_enter, R.anim.main_exit);
