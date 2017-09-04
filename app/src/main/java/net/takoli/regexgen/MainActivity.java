@@ -22,13 +22,13 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-	static final String RT = "regextext";
 	SectionsPagerAdapter mSectionsPagerAdapter;
 	ViewPager viewPager; // will host the section contents
 	TextView regExText;
 	String sw;
 	String cnt1, cnt2, cnt3, nCnt;
 	String ew1, ew2, ew3, nEw;
+	String startDelimiter, endDelimiter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
 		viewPager.setAdapter(mSectionsPagerAdapter);
 		sw = "";
 		cnt1 = cnt2 = cnt3 = nCnt = "";
-		ew1 = ew2 = ew3 = nEw = "";		
+		ew1 = ew2 = ew3 = nEw = "";
+		startDelimiter = "\\b";
+		endDelimiter = "\\b";
 		createRegex();
 		
 		//DIAGNOSTICS
@@ -74,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 		if (sw.compareTo("") != 0 && sw.charAt(0) != '[' && sw.charAt(sw.length()-1) != ']')
 			S = withEscapes(sw);
 		else S = sw;
-		S = "\\b" + S;
+		S = startDelimiter + S;
 		
 		C = concatParts(withEscapes(cnt1), withEscapes(cnt2), withEscapes(cnt3));
 		if (C.compareTo("") != 0)
@@ -90,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 			En = "(?<!" + withEscapes(nEw) + ")";
 		E = E + En;
 		if (E.compareTo("") != 0)
-			E += "\\b";
+			E += endDelimiter;
 
 		regExText = (TextView) findViewById(R.id.regexText);
 		regExText.setText(S + C + E);
