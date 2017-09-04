@@ -10,9 +10,9 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
-    <color name="appBlue">#0288d1</color>
-    <color name="appLightBlue">#90caf9</color>
+    <color name="appBlue">#0288D1</color>
+    <color name="appLightBlue">#90CAF9</color>
     <color name="inputColor">#555555</color>
-    <color name="light">#E8E8E8</color>
+    <color name="light">#EEEEEE</color>
 
 </resources>

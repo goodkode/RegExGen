@@ -13,9 +13,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,24 +25,42 @@ public class MainActivity extends AppCompatActivity {
 	String sw;
 	String cnt1, cnt2, cnt3, nCnt;
 	String ew1, ew2, ew3, nEw;
-	String startDelimiter, endDelimiter;
+	private String startDelimiter, endDelimiter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main_activity);
-		this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
-		ViewPager viewPager = findViewById(R.id.viewpager);
-		viewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
-		sw = "";
-		cnt1 = cnt2 = cnt3 = nCnt = "";
-		ew1 = ew2 = ew3 = nEw = "";
-		startDelimiter = "\\b";
-		endDelimiter = "\\b";
+		setUp();
 		createRegex();
 	}
+
+	private void setUp() {
+        ViewPager viewPager = findViewById(R.id.viewpager);
+        viewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
+
+        sw = "";
+        cnt1 = cnt2 = cnt3 = nCnt = "";
+        ew1 = ew2 = ew3 = nEw = "";
+        startDelimiter = "\\b";
+        endDelimiter = "\\b";
+
+        ((RadioButton)findViewById(R.id.matchOnWordsRadio)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
+                if (checked) {
+                    startDelimiter = "\\b";
+                    endDelimiter = "\\b";
+                } else {
+                    startDelimiter = "^";
+                    endDelimiter = "$";
+                }
+                createRegex();
+            }
+        });
+    }
 
 	private void createRegex() {
 		String S, C, Cn, E, En;
@@ -236,7 +255,6 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	public void regSWFlisteners(View view) {
-		//Log.i("takoli", "regSWFlisteners");
 		// LISTENER: startsWithText changes sent to regex right away
 		((EditText) findViewById(R.id.startsWithText))
 				.addTextChangedListener(new TextWatcher() {
@@ -772,9 +790,6 @@ public class MainActivity extends AppCompatActivity {
 		public int currentPage;
 		public View thisView;
 
-		public SectionFragment() {
-		}
-
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
@@ -803,19 +818,13 @@ public class MainActivity extends AppCompatActivity {
 		public void setUserVisibleHint(final boolean visible) {
 			super.setUserVisibleHint(visible);
 			if (visible && currentPage == 1) {
-				//Log.i("setUserVisibleHint", "suvh StartsWith");
-				((TextView) thisView.findViewById(R.id.sideText1))
-						.performClick();
+				thisView.findViewById(R.id.sideText1).performClick();
 			}
 			if (visible && currentPage == 2) {
-				//Log.i("setUserVisibleHint", "suvh Contains");
-				((TextView) thisView.findViewById(R.id.sideText2))
-						.performClick();
+				thisView.findViewById(R.id.sideText2).performClick();
 			}
 			if (visible && currentPage == 3) {
-				//Log.i("setUserVisibleHint", "suvh EndsWith");
-				((TextView) thisView.findViewById(R.id.sideText3))
-						.performClick();
+				thisView.findViewById(R.id.sideText3).performClick();
 			}
 		}
 	}
