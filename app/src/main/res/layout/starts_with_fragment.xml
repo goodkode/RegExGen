@@ -42,7 +42,7 @@
 				android:text="@string/anything"
                 android:textSize="@dimen/fontSize"
 				android:checked="true"
-				android:onClick="onSWFCheckboxClicked" />
+				android:onClick="onStartsWithCheckboxListener" />
 
 			<CheckBox
 				android:id="@+id/upper_letter"
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
 				android:text="@string/upper_letter"
                 android:textSize="@dimen/fontSize"
-				android:onClick="onSWFCheckboxClicked" />
+				android:onClick="onStartsWithCheckboxListener" />
 
 			<CheckBox
 				android:id="@+id/lower_letter"
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
 				android:text="@string/lower_letter"
                 android:textSize="@dimen/fontSize"
-				android:onClick="onSWFCheckboxClicked" />
+				android:onClick="onStartsWithCheckboxListener" />
 
 			<CheckBox
 				android:id="@+id/number"
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
 				android:text="@string/number"
                 android:textSize="@dimen/fontSize"
-				android:onClick="onSWFCheckboxClicked" />
+				android:onClick="onStartsWithCheckboxListener" />
 
 			<CheckBox
 				android:id="@+id/symbol"
@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
 				android:text="@string/symbol"
                 android:textSize="@dimen/fontSize"
-				android:onClick="onSWFCheckboxClicked" />
+				android:onClick="onStartsWithCheckboxListener" />
 
 			<LinearLayout
 				android:layout_width="wrap_content"
@@ -82,10 +82,11 @@
 
 				<CheckBox
 					android:id="@+id/startsWithCheckBox"
+					android:tag="textInput"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/fontSize"
-					android:onClick="onSWFCheckboxClicked" />
+					android:onClick="onStartsWithCheckboxListener" />
 
 				<EditText
 					android:id="@+id/startsWithText"
@@ -104,14 +105,5 @@
 		</LinearLayout>
 
 	</LinearLayout>
-
-	<!--<TextView-->
-		<!--android:layout_width="wrap_content"-->
-		<!--android:layout_height="26dp"-->
-		<!--android:layout_gravity="center_horizontal|bottom"-->
-		<!--android:text="@string/swipe"-->
-		<!--android:textSize="13sp"-->
-		<!--android:textStyle="italic"-->
-		<!--android:textColor="@color/appBlue"/>-->
 
 </FrameLayout>

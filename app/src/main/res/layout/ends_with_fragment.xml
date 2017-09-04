@@ -41,16 +41,17 @@
 				android:text="@string/anything"
                 android:textSize="@dimen/fontSize"
 				android:checked="true"
-				android:onClick="onEWFCheckboxClicked" />
+				android:onClick="onEndsWithCheckboxListener" />
 
 			<CheckBox
 				android:id="@+id/endsText1CheckBox"
+				android:tag="textInput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 				android:layout_below="@id/endsAnything"
 				android:text="@string/empty"
                 android:textSize="@dimen/fontSize"
-				android:onClick="onEWFCheckboxClicked" />
+				android:onClick="onEndsWithCheckboxListener" />
 
 				<EditText
 					android:id="@+id/endsText1"
@@ -68,12 +69,13 @@
 
 			<CheckBox
 				android:id="@+id/endsText2CheckBox"
+				android:tag="textInput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 				android:layout_below="@id/endsText1CheckBox"
                 android:textSize="@dimen/fontSize"
 				android:text="@string/OR"
-				android:onClick="onEWFCheckboxClicked" />
+				android:onClick="onEndsWithCheckboxListener" />
 
 				<EditText
 					android:id="@+id/endsText2"
@@ -91,12 +93,13 @@
 
 			<CheckBox
 				android:id="@+id/endsText3CheckBox"
+				android:tag="textInput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 				android:layout_below="@id/endsText2CheckBox"
 				android:text="@string/OR"
                 android:textSize="@dimen/fontSize"
-				android:onClick="onEWFCheckboxClicked" />
+				android:onClick="onEndsWithCheckboxListener" />
 
 				<EditText
 					android:id="@+id/endsText3"
@@ -115,13 +118,14 @@
 			<!-- doesnt end with -->
 			<CheckBox
 				android:id="@+id/notEndsTextCheckBox"
+				android:tag="textInput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 				android:layout_below="@id/endsText3CheckBox"
 				android:layout_marginTop="18dp"
 				android:text="@string/but"
                 android:textSize="@dimen/fontSize"
-				android:onClick="onEWFCheckboxClicked" />
+				android:onClick="onEndsWithCheckboxListener" />
 
 				<EditText
 					android:id="@+id/notEndsText"

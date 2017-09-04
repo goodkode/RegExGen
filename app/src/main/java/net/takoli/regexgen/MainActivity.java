@@ -157,7 +157,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // STARTS WITH FRAGMENT
-    public void onSWFCheckboxClicked(View view) {
+    public void onStartsWithCheckboxListener(View view) {
+        if (view.getTag() == null) hideKeyboard();
         boolean checked = ((CheckBox) view).isChecked();
         switch (view.getId()) {
             case R.id.startsAnything:
@@ -235,7 +236,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         createRegex();
-
     }
 
     private String SWFhelper() {
@@ -308,7 +308,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // CONTINUES WITH FRAGMENT
-    public void onCFCheckboxClicked(View view) {
+    public void onContinueWithCheckboxListener(View view) {
+        if (view.getTag() == null) hideKeyboard();
         boolean checked = ((CheckBox) view).isChecked();
         switch (view.getId()) {
             case R.id.contAnything:
@@ -531,7 +532,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // ENDS WITH FRAGMENT
-    public void onEWFCheckboxClicked(View view) {
+    public void onEndsWithCheckboxListener(View view) {
+        if (view.getTag() == null) hideKeyboard();
         boolean checked = ((CheckBox) view).isChecked();
         switch (view.getId()) {
             case R.id.endsAnything:
