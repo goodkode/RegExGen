@@ -3,6 +3,8 @@
     android:installLocation="auto"
     package="net.takoli.regexgen">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/regex_gui"
@@ -27,6 +29,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="net.takoli.regexgen.MainActivity" />
         </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="9ed2ea792369ef019a3d79c0dca94b6ed0698990" />
     </application>
 
 </manifest>
