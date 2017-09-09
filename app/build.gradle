@@ -22,8 +22,8 @@ android {
         applicationId "net.takoli.regexgen"
         minSdkVersion 14
         targetSdkVersion 26
-        versionCode 220
-        versionName "2.2.0"
+        versionCode 290
+        versionName "2.9.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

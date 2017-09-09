@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/appLightBlue"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/viewPagerHeight"
+            android:paddingStart="@dimen/viewPagerSidePadding"
+            android:paddingEnd="@dimen/viewPagerSidePadding"
+            android:clipToPadding="false"
+            android:layout_gravity="center"
+            android:background="@drawable/view_pager_background"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v4.view.PagerTitleStrip
+                android:id="@+id/pager_title_strip"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/titleHeight"
+                android:layout_gravity="top"
+                android:paddingBottom="@dimen/titleStripPadding"
+                android:background="@color/appBlue"
+                android:textColor="#FFF"
+                android:textSize="@dimen/titleFontSize" />
+
+        </android.support.v4.view.ViewPager>
+
+        <FrameLayout
+            android:id="@+id/radio_container"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/light"
+            app:layout_constraintTop_toBottomOf="@+id/viewpager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:checkedButton="@+id/matchOnWordsRadio"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/matchOnWordsRadio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/marginHalf"
+                    android:shadowColor="@android:color/white"
+                    android:text="match on words"
+                    android:textSize="@dimen/hintFontSize" />
+
+                <RadioButton
+                    android:id="@+id/matchOnLinesRadio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="match on lines"
+                    android:textSize="@dimen/hintFontSize" />
+
+            </RadioGroup>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/regexLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/marginHalf"
+            android:text="@string/regexLabel"
+            android:textColor="#FFF"
+            android:textSize="@dimen/fontSize"
+            app:layout_constraintTop_toBottomOf="@+id/radio_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"/>
+
+        <TextView
+            android:id="@+id/regexText"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:minWidth="260dp"
+            android:layout_below="@id/regexLabel"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/marginHalf"
+            android:background="@drawable/regex_field"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="@string/regexText"
+            android:textColor="#666"
+            android:textSize="@dimen/sideFontSize"
+            android:textIsSelectable="true"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/regexLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+        <Button
+            android:id="@+id/shareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/regexText"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/marginHalf"
+            android:layout_marginBottom="8dp"
+            android:drawableLeft="@drawable/share_icon"
+            android:onClick="onShareClick"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="@string/shareButton"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="@dimen/fontSize"
+            app:layout_constraintBottom_toTopOf="@+id/cheatSheet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/regexText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <Button
+            android:id="@+id/cheatSheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="@dimen/titleFontSize"
+            android:text="@string/regex_cheat_sheet"
+            android:onClick="showCheatSheet"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</merge>

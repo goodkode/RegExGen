@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="margin">14dp</dimen>
-    <dimen name="marginHalf">7dp</dimen>
+    <dimen name="margin">16dp</dimen>
+    <dimen name="marginHalf">8dp</dimen>
 
-    <dimen name="viewPagerHeight">350dp</dimen>
+    <dimen name="viewPagerHeight">330dp</dimen>
+    <dimen name="viewPagerSidePadding">0dp</dimen>
+    <dimen name="titleHeight">60dp</dimen>
+    <dimen name="titleStripPadding">10dp</dimen>
 
-    <dimen name="fontSize">16sp</dimen>
-    <dimen name="hintFontSize">15sp</dimen>
-    <dimen name="titleFontSize">18sp</dimen>
-    <dimen name="sideFontSize">22sp</dimen>
+    <dimen name="fontSize">18sp</dimen>
+    <dimen name="hintFontSize">17sp</dimen>
+    <dimen name="titleFontSize">20sp</dimen>
+    <dimen name="sideFontSize">24sp</dimen>
 
-    <dimen name="editTextWidth">125dp</dimen>
+    <dimen name="editTextWidth">135dp</dimen>
+
 
 </resources>

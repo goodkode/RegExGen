@@ -5,6 +5,9 @@
     <dimen name="marginHalf">10dp</dimen>
 
     <dimen name="viewPagerHeight">420dp</dimen>
+    <dimen name="viewPagerSidePadding">120dp</dimen>
+    <dimen name="titleHeight">76dp</dimen>
+    <dimen name="titleStripPadding">14dp</dimen>
 
     <dimen name="fontSize">19sp</dimen>
     <dimen name="hintFontSize">18sp</dimen>
