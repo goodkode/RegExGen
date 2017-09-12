@@ -141,7 +141,10 @@ public class MainActivity extends AppCompatActivity {
                 escaped.append(c);
         }
         return escaped.toString();
-        //return Pattern.quote(orig);
+    }
+
+    public void onCopyClick(View view) {
+        // TODO
     }
 
     public void onShareClick(View view) {
