@@ -23,7 +23,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 26
         versionCode 310
-        versionName "3.1.0-dev"
+        versionName "3.1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
