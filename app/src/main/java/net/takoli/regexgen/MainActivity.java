@@ -1,5 +1,7 @@
 package net.takoli.regexgen;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,14 +21,16 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.TextView;
+import android.widget.Toast;
+
 import com.crashlytics.android.Crashlytics;
+
 import io.fabric.sdk.android.Fabric;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView regExText;
+    private EditText regExText;
     private String sw;
     private String cnt1, cnt2, cnt3, nCnt;
     private String ew1, ew2, ew3, nEw;
@@ -144,7 +148,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onCopyClick(View view) {
-        // TODO
+        String regex = regExText.getText().toString();
+        regExText.setSelection(0, regex.length());
+        ClipData clip = ClipData.newPlainText("regex", regex);
+        ClipboardManager clipboard = (ClipboardManager)
+                getSystemService(Context.CLIPBOARD_SERVICE);
+        clipboard.setPrimaryClip(clip);
+        Toast.makeText(this, "Copied to clipboard!", Toast.LENGTH_LONG).show();
     }
 
     public void onShareClick(View view) {
