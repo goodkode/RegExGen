@@ -65,6 +65,7 @@
                     android:textStyle="italic"
                     android:textColor="@color/inputColor"
                     android:hint="@string/containsText"
+					android:imeOptions="actionDone"
                     android:onClick="regCFlisteners" />
 
             <CheckBox
@@ -89,6 +90,7 @@
                     android:textStyle="italic"
                     android:textColor="@color/inputColor"
                     android:hint="@string/containsText"
+					android:imeOptions="actionDone"
                     android:onClick="regCFlisteners"  />
 
             <CheckBox
@@ -113,6 +115,7 @@
                     android:textStyle="italic"
                     android:textColor="@color/inputColor"
                     android:hint="@string/containsText"
+					android:imeOptions="actionDone"
                     android:onClick="regCFlisteners"  />
 
             <!-- doesnt contain -->
@@ -139,6 +142,7 @@
                     android:textStyle="italic"
                     android:textColor="@color/inputColor"
                     android:hint="@string/notContainsText"
+					android:imeOptions="actionDone"
                     android:onClick="regCFlisteners"  />
 
         </RelativeLayout>

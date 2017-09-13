@@ -98,6 +98,7 @@
                     android:textStyle="italic"
                     android:textColor="@color/inputColor"
                     android:hint="@string/startsWithText"
+					android:imeOptions="actionDone"
 					android:onClick="regSWFlisteners"/>
 
 			</LinearLayout>
