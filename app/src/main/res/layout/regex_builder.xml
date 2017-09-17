@@ -59,14 +59,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/marginHalf"
                     android:shadowColor="@android:color/white"
-                    android:text="match on words"
+                    android:text="@string/match_on_words"
                     android:textSize="@dimen/hintFontSize" />
 
                 <RadioButton
                     android:id="@+id/matchOnLinesRadio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="match on lines"
+                    android:text="@string/match_on_lines"
                     android:textSize="@dimen/hintFontSize" />
 
             </RadioGroup>
