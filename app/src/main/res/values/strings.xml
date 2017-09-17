@@ -33,7 +33,7 @@
     <string name="shareButton">\u0020\u0020Share</string>
     <string name="copyButton">\u0020\u0020Copy</string>
     <string name="share_regex_to">Share regex to</string>
-    <string name="about_message">The app\'s philosophy is to help with hard to memorize regular expression rules. It provides a graphical tool to make the generation just a bit easier. I hope you make good use of it!\n\nPlease feel free to email me (Google Play), any feedback is much appreciated!\n\nThanks!\n\ntakoli</string>
+    <string name="about_message">The app\'s philosophy is to help with hard to memorize regular expression rules. It provides a graphical tool to make the generation just a bit easier. I hope you make good use of it!\n\nPlease feel free to email me (Google Play), any feedback is much appreciated!\n\nThanks!</string>
     <string name="got_it">Cool</string>
 
 
@@ -50,20 +50,12 @@
     <string name="n_to_m_times">n to m times</string>
     <string name="cheat_sheet_title">Regular Expression Cheat Sheet</string>
     <string name="character_classes">Character Classes</string>
-    <string name="char_class_rules">\\s\u0020\u0020Whitespace\n\\S\u0020\u0020Not whitespace\n\\d\u0020\u0020Digit\n\\D\u0020\u0020Not digit\n\\w\u0020\u0020Word\n\\W\u0020\u0020Not word\n\\c\u0020\u0020Control character</string>
     <string name="quantifiers">Quantifiers</string>
-    <string name="quant_rules">*\u0020\u00200 or more\n+\u0020\u00201 or more\n?\u0020\u00200 or 1\n{3}\u0020\u0020Exactly 3\n{3,}\u0020\u00203 or more\n{3,5}\u0020\u00203, 4 or 5</string>
     <string name="anchors">Anchors</string>
-    <string name="anch_rules">^\u0020\u0020Start of string or line\n$\u0020\u0020End of string or line\n\\&lt;\u0020\u0020Start of word\n\\&gt;\u0020\u0020End of word\n\\A\u0020\u0020Start of string\n\\Z\u0020\u0020End of string\n\\b\u0020\u0020Word boundary\n\\B\u0020\u0020Not word boundary</string>
     <string name="groups_and_ranges">Groups and Ranges</string>
     <string name="any_character">Any character</string>
-    <string name="group_rang_rules">.\u0020\u0020Any character\n[abc]\u0020\u0020Range (a or b or c)\n[^abc]\u0020\u0020Not a or b or c\n[a&#8211;q]\u0020\u0020\u0020\u0020Letter from a to q\n[A&#8211;E]\u0020\u0020\u0020\u0020Upper case from A to E\n[0&#8211;5]\u0020\u0020\u0020\u0020Digit from 0 to 5\n?!\u0020\u0020\u0020\u0020Negative lookahead\n(&#8230;)\u0020\u0020\u0020\u0020Group\n(a|b)\u0020\u0020\u0020\u0020Alternation a or b</string>
     <string name="special_groups_and_characters">Special groups and characters</string>
-    <string name="spec_gr_rules">[:lower:]\u0020\u0020\u0020\u0020Lower case letters\n[:upper:]\u0020\u0020\u0020\u0020Upper case letters\n[:alpha:]\u0020\u0020\u0020\u0020All letters\n[:alnum:]\u0020\u0020\u0020\u0020Digits and letters\n[:digit:]\u0020\u0020\u0020\u0020Digits\n[:word:]\u0020\u0020\u0020\u0020Digits, letters and underscore\n[:print:]\u0020\u0020\u0020\u0020Printed characters and spaces\n[:space:]\u0020\u0020\u0020\u0020Blank characters\n[:print:]\u0020\u0020\u0020\u0020Printed characters and spaces\n[:punct:]\u0020\u0020\u0020\u0020Punctu­ation\n[:cntrl:]\u0020\u0020\u0020\u0020Control characters\n[:graph:]\u0020\u0020\u0020\u0020Printed characters\n\\n\u0020\u0020\u0020\u0020New line\n\\r\u0020\u0020\u0020\u0020Carriage return\n\\t\u0020\u0020\u0020\u0020Tab</string>
     <string name="metacharacters_escaped_by">Metacharacters - escaped with "\\":</string>
-    <string name="meta_rules">^\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020[\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020.\n$\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020{\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020*\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\n(\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\\\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020+\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\n)\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020|\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020?\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\n&lt;\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020&gt;</string>
-    <string name="screen_props">screen props</string>
-    <string name="title_activity_main2">Main2Activity</string>
     <string name="nnumber">Number</string>
     <string name="digit">Digit</string>
     <string name="not_digit">Not digit</string>
@@ -93,6 +85,5 @@
     <string name="blank_char">Blank char</string>
     <string name="printed_char">Printed char</string>
     <string name="letter_underscore_digit">Letter, _, digit</string>
-
 
 </resources>
