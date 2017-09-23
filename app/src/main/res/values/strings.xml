@@ -22,7 +22,7 @@
     <string name="but">but:</string>
     <string name="endsText">ends with&#8230;</string>
     <string name="notEndsWithText">doesn\'t end with&#8230;</string>
-    <string name="empty"></string>
+    <string name="empty" translatable="false"></string>
 
 
     <!--Main-->
