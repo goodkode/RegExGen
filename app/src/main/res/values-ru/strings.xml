@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+
+    <!--Builder-->
+
+    <string name="title_section1">Начинается с</string>
+    <string name="title_section2">Включает</string>
+    <string name="title_section3">Заканчивается на</string>
+    <string name="startsWithText">содержит текст&#8230;</string>
+    <string name="startsWithButton">готово</string>
+    <string name="anything">что-нибудь</string>
+    <string name="upper_letter">буква верхнего регистра</string>
+    <string name="lower_letter">буква нижнего регистра</string>
+    <string name="number">число</string>
+    <string name="symbol">символ</string>
+    <string name="containsText">содержит&#8230;</string>
+    <string name="notContainsText">не содержит&#8230;</string>
+    <string name="OR">или:</string>
+    <string name="but">но:</string>
+    <string name="endsText">заканчивается на&#8230;</string>
+    <string name="notEndsWithText">не заканчивается на&#8230;</string>
+
+
+
+    <!--Main-->
+
+    <string name="match_on_words">совпадение в словах</string>
+    <string name="match_on_lines">совпадение в строках</string>
+    <string name="regexLabel">Регулярное выражение:</string>
+
+    <string name="regex_cheat_sheet">Показать таблицу выражений</string>
+    <string name="shareButton">Поделиться</string>
+    <string name="copyButton">Копировать</string>
+    <string name="share_regex_to">Поделиться выражением с</string>
+    <string name="about_message">Цель приложения помогать со сложными для запоминания регулярными выражениями. Оно предоставляет графические инструменты для генерации регулярных выражений без необходимости изучать синтаксис. Надеюсь вам понравится!  Пожалуйста не стесняйтесь обращаться на email(Google Play), рад каждому вашему отзыву!  Спасибо! На русский перевел Рамзан Эльмурзаев!</string>
+    <string name="got_it">Окей</string>
+    <string name="copied">Скопировано в буфер обмена!</string>
+
+
+    <!--Cheat sheet-->
+
+    <string name="title_activity_display_cheat_sheet">Таблица выражений</string>
+    <string name="action_settings">Настройки</string>
+    <string name="back_to_gen">Вернуться</string>
+    <string name="zero_or_more">Ноль или больше</string>
+    <string name="zero_or_one">Ноль или один</string>
+    <string name="one_or_more">Один или больше</string>
+    <string name="n_times">n раз</string>
+    <string name="n_or_more">n раз или больше</string>
+    <string name="n_to_m_times">n к m раз</string>
+    <string name="cheat_sheet_title">Таблица регулярных выражений</string>
+    <string name="character_classes">Символьные Классы</string>
+    <string name="quantifiers">Квантификаторы</string>
+    <string name="anchors">Якоря</string>
+    <string name="groups_and_ranges">Группы и Диапазоны</string>
+    <string name="any_character">Любой символ</string>
+    <string name="special_groups_and_characters">Специальные группы и символы</string>
+    <string name="metacharacters_escaped_by">Метасимволы - экранируются с помощью "\\":</string>
+    <string name="nnumber">Число</string>
+    <string name="digit">Цифра</string>
+    <string name="not_digit">Не цифра</string>
+    <string name="word">Слово</string>
+    <string name="not_word">Не слово</string>
+    <string name="non_whitespace">Без пробелов</string>
+    <string name="control_char">Контрольный символ</string>
+    <string name="start_of_line_string">Начало линии/строки</string>
+    <string name="end_of_line_string">Конец линии/строки</string>
+    <string name="start_of_string_only">Только начало строки</string>
+    <string name="end_of_string_only">Только конец строки</string>
+    <string name="word_boundary">Граница слова</string>
+    <string name="non_word_boundary">Неглавная граница</string>
+    <string name="metacharacters_escaped_with_slash">Метасимволы экранируемые с \'\\\'</string>
+    <string name="range_a_b_or_c">Диапазон (a, b or c)</string>
+    <string name="not_a_b_or_c">Не a, b, или c</string>
+    <string name="any_char_a_thru_f">Любой символ a до f</string>
+    <string name="any_digit_1_thru_5">Любая цифра 1 до 5</string>
+    <string name="logical_group">Логическая группа</string>
+    <string name="char_x_or_y">Символ x или y</string>
+    <string name="negative_lookahead">Отрицательное спереди</string>
+    <string name="negative_lookbehind">Отрицательное сзади</string>
+    <string name="uppercase">Верхний регистр</string>
+    <string name="lowercase">Нижний регистр</string>
+    <string name="any_letter">Любая буква</string>
+    <string name="letter_or_num">Буква или число</string>
+    <string name="blank_char">Пустой символ</string>
+    <string name="printed_char">Печатный символ</string>
+    <string name="letter_underscore_digit">Буква, _, цифра</string>
+
+</resources>

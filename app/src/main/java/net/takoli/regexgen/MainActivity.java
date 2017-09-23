@@ -149,12 +149,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void onCopyClick(View view) {
         String regex = regExText.getText().toString();
+        regExText.requestFocus();
         regExText.setSelection(0, regex.length());
         ClipData clip = ClipData.newPlainText("regex", regex);
         ClipboardManager clipboard = (ClipboardManager)
                 getSystemService(Context.CLIPBOARD_SERVICE);
         clipboard.setPrimaryClip(clip);
-        Toast.makeText(this, "Copied to clipboard!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, R.string.copied, Toast.LENGTH_LONG).show();
     }
 
     public void onShareClick(View view) {

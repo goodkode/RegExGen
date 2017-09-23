@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="app_name" translatable="false">RegEx GUI</string>
+
+
     <!--Builder-->
 
-    <string name="app_name">RegEx GUI</string>
     <string name="title_section1">Starts with</string>
     <string name="title_section2">Contains</string>
     <string name="title_section3">Ends with</string>
@@ -28,13 +30,14 @@
     <string name="match_on_words">match on words</string>
     <string name="match_on_lines">match on lines</string>
     <string name="regexLabel">Regular Expression:</string>
-    <string name="regexText">.*</string>
+    <string name="regexText" translatable="false">.*</string>
     <string name="regex_cheat_sheet">Show me the cheat sheet</string>
-    <string name="shareButton">\u0020\u0020Share</string>
-    <string name="copyButton">\u0020\u0020Copy</string>
+    <string name="shareButton">Share</string>
+    <string name="copyButton">Copy</string>
     <string name="share_regex_to">Share regex to</string>
-    <string name="about_message">The app\'s philosophy is to help with hard to memorize regular expression rules. It provides a graphical tool to make the generation just a bit easier. I hope you make good use of it!\n\nPlease feel free to email me (Google Play), any feedback is much appreciated!\n\nThanks!</string>
+    <string name="about_message">The app\'s philosophy is to help with hard to memorize regular expression rules. It provides a graphical tool to make the generation just a bit easier. I hope you make good use of it!  Please feel free to email me (Google Play), any feedback is much appreciated!  Thanks!</string>
     <string name="got_it">Cool</string>
+    <string name="copied">Copied to clipboard!</string>
 
 
     <!--Cheat sheet-->
