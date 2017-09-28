@@ -16,5 +16,6 @@
 
     <dimen name="editTextWidth">135dp</dimen>
 
+    <integer name="shareEms">6</integer>
 
 </resources>
