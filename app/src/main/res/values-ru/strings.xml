@@ -42,7 +42,7 @@
 
     <!--Cheat sheet-->
 
-    <string name="title_activity_display_cheat_sheet">Таблица выражений</string>
+
     <string name="action_settings">Настройки</string>
     <string name="back_to_gen">Вернуться</string>
     <string name="zero_or_more">Ноль или больше</string>

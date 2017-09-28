@@ -30,7 +30,7 @@
     <string name="match_on_words">vergleiche Wörter</string>
     <string name="match_on_lines">vergleiche Zeilen</string>
     <string name="regexLabel">requlärer Ausdruck:</string>
-    <string name="regexText" translatable="false">.*</string>
+
     <string name="regex_cheat_sheet">Zeige mir die Erklärungsseite</string>
     <string name="shareButton">Teilen</string>
     <string name="copyButton">Kopieren</string>
@@ -42,7 +42,7 @@
 
     <!--Cheat sheet-->
 
-    <string name="title_activity_display_cheat_sheet" translatable="false">DisplayCheatSheetActivity</string>
+
     <string name="action_settings">Einstellungen</string>
     <string name="back_to_gen">Verstanden, danke</string>
     <string name="zero_or_more">Null oder mehr</string>
