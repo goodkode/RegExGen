@@ -16,4 +16,14 @@
 
     <dimen name="editTextWidth">135dp</dimen>
 
+
+    <!--Cheat sheet-->
+
+    <dimen name="paddingTopBottom">8dp</dimen>
+    <dimen name="paddingSides">4dp</dimen>
+    <dimen name="ruleWidth">56dp</dimen>
+    <dimen name="categoryFontSize">18sp</dimen>
+    <dimen name="ruleFontSize">15sp</dimen>
+    <dimen name="descriptionFontSize">@dimen/ruleFontSize</dimen>
+
 </resources>

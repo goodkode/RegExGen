@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Cheat sheet-->
+
+    <dimen name="categoryFontSize">13sp</dimen>
+    <dimen name="ruleFontSize">10sp</dimen>
+    <dimen name="descriptionFontSize">@dimen/ruleFontSize</dimen>
+
+</resources>

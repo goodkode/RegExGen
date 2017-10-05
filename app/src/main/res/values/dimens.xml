@@ -18,4 +18,14 @@
 
     <integer name="shareEms">6</integer>
 
+
+    <!--Cheat sheet-->
+
+    <dimen name="paddingTopBottom">4dp</dimen>
+    <dimen name="paddingSides">2dp</dimen>
+    <dimen name="ruleWidth">38dp</dimen>
+    <dimen name="categoryFontSize">14sp</dimen>
+    <dimen name="ruleFontSize">12sp</dimen>
+    <dimen name="descriptionFontSize">@dimen/ruleFontSize</dimen>
+
 </resources>

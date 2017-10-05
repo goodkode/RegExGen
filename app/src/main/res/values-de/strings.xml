@@ -29,7 +29,7 @@
 
     <string name="match_on_words">vergleiche Wörter</string>
     <string name="match_on_lines">vergleiche Zeilen</string>
-    <string name="regexLabel">requlärer Ausdruck:</string>
+    <string name="regexLabel">regulärer Ausdruck:</string>
 
     <string name="regex_cheat_sheet">Zeige mir die Erklärungsseite</string>
     <string name="shareButton">Teilen</string>

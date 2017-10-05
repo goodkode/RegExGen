@@ -12,7 +12,7 @@
         android:layout_gravity="top"
         android:background="@color/appBlue"
         android:gravity="center"
-        android:padding="@dimen/margin"
+        android:padding="@dimen/paddingTopBottom"
         android:text="@string/cheat_sheet_title"
         android:textColor="#ffff"
         android:textSize="@dimen/titleFontSize" />
@@ -34,7 +34,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/button"
-        android:layout_below="@id/cheat_sheet_title_strip">
+        android:layout_below="@id/cheat_sheet_title_strip"
+        android:padding="@dimen/paddingSides">
 
         <LinearLayout
             android:id="@+id/rules_parent"
@@ -42,7 +43,6 @@
             android:layout_height="wrap_content"
             android:baselineAligned="false"
             android:orientation="horizontal"
-            android:padding="5dp"
             tools:ignore="HardcodedText">
 
             <LinearLayout
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:padding="5dp">
+                android:padding="@dimen/paddingSides">
 
                 <TableLayout style="@style/TableStyle">
 
@@ -60,7 +60,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="." />
 
                         <TextView
@@ -70,7 +70,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="*" />
 
                         <TextView
@@ -80,7 +80,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="+" />
 
                         <TextView
@@ -90,7 +90,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="\?" />
 
                         <TextView
@@ -100,7 +100,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="{n}" />
 
                         <TextView
@@ -110,7 +110,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="{n,}" />
 
                         <TextView
@@ -120,7 +120,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="{n,m}" />
 
                         <TextView
@@ -138,7 +138,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="\\d" />
 
                         <TextView
@@ -148,7 +148,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="\\D" />
 
                         <TextView
@@ -158,7 +158,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="\\w" />
 
                         <TextView
@@ -168,7 +168,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="\\W" />
 
                         <TextView
@@ -178,7 +178,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="\\s" />
 
                         <TextView
@@ -188,7 +188,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="\\S" />
 
                         <TextView
@@ -198,7 +198,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="\\c" />
 
                         <TextView
@@ -216,7 +216,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="^" />
 
                         <TextView
@@ -226,7 +226,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="$" />
 
                         <TextView
@@ -236,7 +236,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="\\A" />
 
                         <TextView
@@ -246,7 +246,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="\\Z" />
 
                         <TextView
@@ -256,7 +256,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="\\b" />
 
                         <TextView
@@ -266,7 +266,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="\\B" />
 
                         <TextView
@@ -283,7 +283,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:padding="5dp">
+                android:padding="@dimen/paddingSides">
 
                 <TableLayout style="@style/TableStyle">
 
@@ -292,10 +292,10 @@
                         android:text="@string/metacharacters_escaped_with_slash" />
 
                     <TextView
-                        style="@style/CheatItem"
+                        style="@style/CheatRule"
                         android:layout_width="wrap_content"
                         android:gravity="center"
-                        android:text="&lt;&#160;(&#160;[&#160;{&#160;\\&#160;^&#160;-&#160;=&#160;$&#160;!&#160;\n|&#160;]&#160;}&#160;)&#160;\?&#160;*&#160;+&#160;.&#160;&gt;"
+                        android:text="@string/metacharacters"
                         android:textStyle="normal" />
                 </TableLayout>
 
@@ -307,7 +307,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="[abc]" />
 
                         <TextView
@@ -317,7 +317,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="[^abc]" />
 
                         <TextView
@@ -327,7 +327,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="[a-f]" />
 
                         <TextView
@@ -337,7 +337,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="[1-5]" />
 
                         <TextView
@@ -347,7 +347,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="(...)" />
 
                         <TextView
@@ -357,7 +357,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="(x|y)" />
 
                         <TextView
@@ -367,7 +367,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="\?!" />
 
                         <TextView
@@ -377,7 +377,7 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem"
+                            style="@style/CheatRule"
                             android:text="\?&lt;!" />
 
                         <TextView
@@ -395,7 +395,9 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem2"
+                            style="@style/CheatRule"
+                            android:layout_width="wrap_content"
+                            android:paddingRight="@dimen/paddingSides"
                             android:text="[:upper:]" />
 
                         <TextView
@@ -405,7 +407,9 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem2"
+                            style="@style/CheatRule"
+                            android:layout_width="wrap_content"
+                            android:paddingRight="@dimen/paddingSides"
                             android:text="[:lower:]" />
 
                         <TextView
@@ -415,7 +419,9 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem2"
+                            style="@style/CheatRule"
+                            android:layout_width="wrap_content"
+                            android:paddingRight="@dimen/paddingSides"
                             android:text="[:alpha:]" />
 
                         <TextView
@@ -425,7 +431,9 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem2"
+                            style="@style/CheatRule"
+                            android:layout_width="wrap_content"
+                            android:paddingRight="@dimen/paddingSides"
                             android:text="[:digit:]" />
 
                         <TextView
@@ -435,7 +443,9 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem2"
+                            style="@style/CheatRule"
+                            android:layout_width="wrap_content"
+                            android:paddingRight="@dimen/paddingSides"
                             android:text="[:alphanum:]" />
 
                         <TextView
@@ -445,7 +455,9 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem2"
+                            style="@style/CheatRule"
+                            android:layout_width="wrap_content"
+                            android:paddingRight="@dimen/paddingSides"
                             android:text="[:space:]" />
 
                         <TextView
@@ -455,7 +467,9 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem2"
+                            style="@style/CheatRule"
+                            android:layout_width="wrap_content"
+                            android:paddingRight="@dimen/paddingSides"
                             android:text="[:graph:]" />
 
                         <TextView
@@ -465,7 +479,9 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem2"
+                            style="@style/CheatRule"
+                            android:layout_width="wrap_content"
+                            android:paddingRight="@dimen/paddingSides"
                             android:text="[:word:]" />
 
                         <TextView
@@ -475,7 +491,9 @@
 
                     <TableRow>
                         <TextView
-                            style="@style/CheatItem2"
+                            style="@style/CheatRule"
+                            android:layout_width="wrap_content"
+                            android:paddingRight="@dimen/paddingSides"
                             android:text="[:cntrl:]" />
 
                         <TextView

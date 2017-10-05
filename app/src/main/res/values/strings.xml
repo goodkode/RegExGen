@@ -59,6 +59,7 @@
     <string name="any_character">Any character</string>
     <string name="special_groups_and_characters">Special groups and characters</string>
     <string name="metacharacters_escaped_by">Metacharacters - escaped with "\\":</string>
+    <string name="metacharacters" translatable="false">&lt;&#160;(&#160;[&#160;{&#160;\\&#160;^&#160;-&#160;=&#160;$&#160;!&#160;\n|&#160;]&#160;}&#160;)&#160;\?&#160;*&#160;+&#160;.&#160;&gt;</string>
     <string name="nnumber">Number</string>
     <string name="digit">Digit</string>
     <string name="not_digit">Not digit</string>

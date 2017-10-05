@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="hintFontSize">16sp</dimen>
+
+
+    <!--Cheat sheet-->
+
+    <dimen name="ruleFontSize">13sp</dimen>
+    <dimen name="descriptionFontSize">@dimen/ruleFontSize</dimen>
+
+</resources>
